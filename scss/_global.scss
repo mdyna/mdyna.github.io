@@ -12,6 +12,11 @@ h6 {
   @include heading-font;
 }
 
+// Custom dark color for h1 text
+h1.dark {
+  color: $dark;
+}
+
 // Custom Horizontal Rule with Star Icon
 hr.star-light,
 hr.star-dark {
@@ -52,6 +57,10 @@ hr.star-dark {
 hr.star-dark:after {
   color: $secondary;
   background-color: white;
+}
+hr.star-dark.primary:after {
+  color: $dark;
+  background-color: $primary;
 }
 
 // Section Padding Settings

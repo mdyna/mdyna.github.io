@@ -1,8 +1,8 @@
 {
-    "title": "Freelancer",
-    "name": "startbootstrap-freelancer",
+    "title": "Mdyna Landing Page",
+    "name": "mdyna.github.io",
     "version": "5.0.1",
-    "description": "A freelancer portfolio HTML theme for Bootstrap.",
+    "description": "A landing page for the app Mdyna, based in Start Bootstrap's freelancer template.",
     "keywords": [
         "css",
         "sass",
@@ -11,6 +11,11 @@
         "theme",
         "template"
     ],
+    "scripts": {
+        "start": "gulp dev",
+        "css": "gulp css",
+        "build": "gulp"
+    },
     "homepage": "https://startbootstrap.com/template-overviews/freelancer",
     "bugs": {
         "url": "https://github.com/BlackrockDigital/startbootstrap-freelancer/issues",
