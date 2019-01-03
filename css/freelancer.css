@@ -1,7 +1,7 @@
 /*!
- * Start Bootstrap - Freelancer v5.0.1 (https://startbootstrap.com/template-overviews/freelancer)
- * Copyright 2013-2018 Start Bootstrap
- * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-freelancer/blob/master/LICENSE)
+ * Start Bootstrap - Mdyna Landing Page v5.0.1 (https://startbootstrap.com/template-overviews/freelancer)
+ * Copyright 2013-2019 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/mdyna.github.io/blob/master/LICENSE)
  */
 
 body {
@@ -33,6 +33,12 @@ hr.star-dark {
   margin-bottom: 2.5rem;
   margin-left: auto;
   margin-right: auto;
+}
+
+.row .ml-auto img {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 
 hr.star-light:after,
