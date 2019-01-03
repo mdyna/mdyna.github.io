@@ -19,6 +19,7 @@ h1.dark {
 
 // Custom Horizontal Rule with Star Icon
 hr.star-light,
+hr.star-dyna,
 hr.star-dark {
   max-width: 15rem;
   padding: 0;
@@ -37,6 +38,7 @@ hr.star-dark {
   display: block;
 }
 
+hr.star-dyna:after,
 hr.star-light:after,
 hr.star-dark:after {
   position: relative;
@@ -55,6 +57,14 @@ hr.star-light {
 hr.star-light:after {
   color: $white;
   background-color: $primary;
+}
+
+hr.star-dyna {
+  border-color: $primary;
+}
+hr.star-dyna:after {
+  color: $primary;
+  background-color: $secondary;
 }
 
 hr.star-dark {
