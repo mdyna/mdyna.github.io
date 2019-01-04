@@ -23,6 +23,7 @@ h1.dark {
 }
 
 hr.star-light,
+hr.star-dyna,
 hr.star-dark {
   max-width: 15rem;
   padding: 0;
@@ -41,6 +42,7 @@ hr.star-dark {
   display: block;
 }
 
+hr.star-dyna:after,
 hr.star-light:after,
 hr.star-dark:after {
   position: relative;
@@ -60,6 +62,15 @@ hr.star-light {
 hr.star-light:after {
   color: #fff;
   background-color: #1DE9b6;
+}
+
+hr.star-dyna {
+  border-color: #1DE9b6;
+}
+
+hr.star-dyna:after {
+  color: #1DE9b6;
+  background-color: #181F27;
 }
 
 hr.star-dark {
@@ -251,7 +262,16 @@ header.masthead h2 {
   }
 }
 
+.portfolio-modal {
+  background-color: #15171F;
+}
+
+.portfolio-modal h2 {
+  color: #1DE9b6 !important;
+}
+
 .portfolio-modal .portfolio-modal-dialog {
+  background-color: #181F27;
   padding: 3rem 1rem;
   min-height: calc(100vh - 2rem);
   margin: 1rem calc(1rem - 8px);
