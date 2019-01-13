@@ -15,6 +15,51 @@
     }
   });
 
+
+  // Fetch github releases API and render download buttons
+  $(document).ready(
+    $.get('https://api.github.com/repos/psybork/dyna/releases', function (data) {
+      function getExtensionName(name) {
+        var split = name.split('.');
+        return split[split.length - 1];
+      }
+
+      function isExtensionValid(extension) {
+        var SUPPORTED_EXTENSIONS = ['deb', 'exe', 'AppImage'];
+        return SUPPORTED_EXTENSIONS.indexOf(extension) !== -1;
+      }
+
+      function buttonHTML(link, name, icon) {
+        var buttonMarkup =
+        '<a class="btn btn-xl btn-outline-light" href="' + link + '">'
+        + '<i class="fas fa-download mr-2"></i>' + name + ' ' + icon
+      + '</a>'
+      return buttonMarkup;
+      }
+
+      if (data && data[0]) {
+        var version = data[0].tag_name;
+        var releases = data[0].assets;
+
+
+        var newHTML = '<h3>Download now<br>' + version + '</h3>';
+        console.log(data);
+        for (var i = 0; i < releases.length; i ++) {
+          var release = releases[i];
+          var releaseExtension = getExtensionName(release.name);
+          var releaseLink = release.browser_download_url;
+          var releaseIcon = releaseExtension === 'exe' ? '<i class="fab fa-windows"></i>'  : '<i class="fab fa-linux"></i>'
+
+          if (isExtensionValid(releaseExtension)) {
+            newHTML += buttonHTML(releaseLink, release.name, releaseIcon);
+          }
+        }
+
+        $('.download-buttons').html(newHTML);
+      }
+    })
+  )
+
   // Scroll to top button appear
   $(document).scroll(function() {
     var scrollDistance = $(this).scrollTop();
