@@ -32,7 +32,7 @@
       function buttonHTML(link, name, icon) {
         var buttonMarkup =
         '<a class="btn btn-xl btn-outline-light" href="' + link + '">'
-        + '<i class="fas fa-download mr-2"></i>' + name + ' ' + icon
+        + name + ' ' + icon
       + '</a>'
       return buttonMarkup;
       }
@@ -42,18 +42,19 @@
         var releases = data[0].assets;
 
 
-        var newHTML = '<h3>Download now<br>' + version + '</h3>';
-        console.log(data);
+        var newHTML = '<h3>Download now<br>' + '<i class="fas fa-download mr-2"></i>' + version + '</h3>';
+        newHTML += '<div>';
         for (var i = 0; i < releases.length; i ++) {
           var release = releases[i];
           var releaseExtension = getExtensionName(release.name);
           var releaseLink = release.browser_download_url;
-          var releaseIcon = releaseExtension === 'exe' ? '<i class="fab fa-windows"></i>'  : '<i class="fab fa-linux"></i>'
+          var releaseIcon = releaseExtension === 'exe' ? '<i class="fab fa-windows"></i>'  : '<i class="fab fa-linux"></i>';
 
           if (isExtensionValid(releaseExtension)) {
             newHTML += buttonHTML(releaseLink, release.name, releaseIcon);
           }
         }
+        newHTML += '</div>';
 
         $('.download-buttons').html(newHTML);
       }

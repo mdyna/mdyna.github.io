@@ -94,6 +94,27 @@ section {
   }
 }
 
+.download-buttons {
+  display: flex;
+  flex-direction: column;
+
+  div {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin: 20px;
+    a {
+      i {
+        margin: 5px;
+        font-size: 24px;
+      }
+
+      margin: 5px;
+    }
+  }
+
+}
+
 // Custom Button Size
 .btn-xl {
   padding: 1rem 1.75rem;
