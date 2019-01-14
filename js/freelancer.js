@@ -25,7 +25,11 @@
       }
 
       function isExtensionValid(extension) {
-        var SUPPORTED_EXTENSIONS = ['deb', 'exe', 'AppImage'];
+        var SUPPORTED_EXTENSIONS = [
+          // 'deb',
+          'exe',
+          'AppImage'
+        ];
         return SUPPORTED_EXTENSIONS.indexOf(extension) !== -1;
       }
 
