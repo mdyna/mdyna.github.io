@@ -18,7 +18,7 @@
 
   // Fetch github releases API and render download buttons
   $(document).ready(
-    $.get('https://api.github.com/repos/psybork/dyna/releases', function (data) {
+    $.get('https://api.github.com/repos/mdyna/mdyna-app/releases', function (data) {
       function getExtensionName(name) {
         var split = name.split('.');
         return split[split.length - 1];
