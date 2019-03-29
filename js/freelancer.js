@@ -15,52 +15,74 @@
     }
   });
 
+  function getExtensionName(name) {
+    var split = name && name.split('.') || '';
+    return split[split.length - 1];
+  }
 
-  // Fetch github releases API and render download buttons
+  function isExtensionValid(extension) {
+    var SUPPORTED_EXTENSIONS = [
+      // 'deb',
+      'exe',
+      'AppImage'
+    ];
+    return SUPPORTED_EXTENSIONS.indexOf(extension) !== -1;
+  }
+
+  function buttonHTML(link, name, icon) {
+    var buttonMarkup =
+    '<a class="btn btn-xl btn-outline-light" href="' + link + '">'
+      + name + ' ' + icon
+    + '</a>'
+    return buttonMarkup;
+  }
+
+  function  renderButtonsHTML(version, releases) {
+    var newHTML = '<h3>Download now<br>' + '<i class="fas fa-download mr-2"></i>' + version + '</h3>';
+    newHTML += '<div>';
+    for (var i = 0; i < releases.length; i ++) {
+      var release = releases[i];
+      var releaseExtension = getExtensionName(release.name);
+      var releaseLink = release.browser_download_url;
+      var releaseIcon = releaseExtension === 'exe' ? '<i class="fab fa-windows"></i>'  : '<i class="fab fa-linux"></i>';
+
+      if (isExtensionValid(releaseExtension)) {
+        newHTML += buttonHTML(releaseLink, release.name, releaseIcon);
+      }
+    }
+    newHTML += '</div>';
+    return newHTML;
+  }
+
+  function renderButtonsFromLocalStorage() {
+    var version = localStorage.getItem('version');
+    var releases = localStorage.getItem('releases');
+    if (version && releases.length) {
+      return renderButtonsHTML(version, releases);
+    }
+    return ''
+  }
+
+  //* Get the releases and version from localStorage
+  //? This avoids a flicker in the browser and ensures the user will always have something
+  //! Even if CI server goes down
+  $(document).ready(
+    $('.download-buttons').html(renderButtonsFromLocalStorage())
+  )
+
+  //* Fetch github releases API and render download buttons
   $(document).ready(
     $.get('https://api.github.com/repos/mdyna/mdyna-app/releases', function (data) {
-      function getExtensionName(name) {
-        var split = name.split('.');
-        return split[split.length - 1];
-      }
-
-      function isExtensionValid(extension) {
-        var SUPPORTED_EXTENSIONS = [
-          // 'deb',
-          'exe',
-          'AppImage'
-        ];
-        return SUPPORTED_EXTENSIONS.indexOf(extension) !== -1;
-      }
-
-      function buttonHTML(link, name, icon) {
-        var buttonMarkup =
-        '<a class="btn btn-xl btn-outline-light" href="' + link + '">'
-        + name + ' ' + icon
-      + '</a>'
-      return buttonMarkup;
-      }
 
       if (data && data[0]) {
-        var version = data[0].tag_name;
-        var releases = data[0].assets;
+        var newVersion = data[0].tag_name;
+        var newReleases = data[0].assets;
 
-
-        var newHTML = '<h3>Download now<br>' + '<i class="fas fa-download mr-2"></i>' + version + '</h3>';
-        newHTML += '<div>';
-        for (var i = 0; i < releases.length; i ++) {
-          var release = releases[i];
-          var releaseExtension = getExtensionName(release.name);
-          var releaseLink = release.browser_download_url;
-          var releaseIcon = releaseExtension === 'exe' ? '<i class="fab fa-windows"></i>'  : '<i class="fab fa-linux"></i>';
-
-          if (isExtensionValid(releaseExtension)) {
-            newHTML += buttonHTML(releaseLink, release.name, releaseIcon);
-          }
+        if (newVersion && newReleases.length) {
+          localStorage.setItem('version', newVersion);
+          localStorage.setItem('releases', newReleases);
         }
-        newHTML += '</div>';
-
-        $('.download-buttons').html(newHTML);
+        $('.download-buttons').html(renderButtonsHTML(newVersion, newReleases));
       }
     })
   )
