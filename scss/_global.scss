@@ -32,7 +32,7 @@ hr.star-dark {
   margin-right: auto;
 }
 
-.row .ml-auto img{
+.row .ml-auto img {
   margin-left: auto;
   margin-right: auto;
   display: block;
@@ -42,10 +42,10 @@ hr.star-dyna:after,
 hr.star-light:after,
 hr.star-dark:after {
   position: relative;
-  top: -.8em;
+  top: -0.8em;
   display: inline-block;
   padding: 0 0.25em;
-  content: '\f249';
+  content: "\f249";
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   font-size: 2em;
@@ -112,7 +112,6 @@ section {
       margin: 5px;
     }
   }
-
 }
 
 // Custom Button Size

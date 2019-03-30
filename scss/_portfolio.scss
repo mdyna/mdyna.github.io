@@ -1,4 +1,5 @@
 // Styling for the portfolio section
+
 .portfolio {
   background-color: $secondary;
 
@@ -6,7 +7,9 @@
   h2,
   h3,
   h4,
-  h5 {
+  h5,
+  p,
+  li {
     color: $primary !important;
   }
 

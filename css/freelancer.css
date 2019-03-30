@@ -46,10 +46,10 @@ hr.star-dyna:after,
 hr.star-light:after,
 hr.star-dark:after {
   position: relative;
-  top: -.8em;
+  top: -0.8em;
   display: inline-block;
   padding: 0 0.25em;
-  content: '\f249';
+  content: "\f249";
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   font-size: 2em;
@@ -233,7 +233,14 @@ section h2 {
 
 header.masthead {
   padding-top: calc(6rem + 72px);
-  padding-bottom: 6rem;
+  padding-bottom: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
 }
 
 header.masthead h1 {
@@ -244,6 +251,55 @@ header.masthead h1 {
 header.masthead h2 {
   font-size: 1.3rem;
   font-family: 'Lato';
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column wrap;
+  flex-flow: column wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.card {
+  background-color: #181F27;
+  padding: 1vh 10vw;
+  width: 100%;
+  margin: 10px 0;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column wrap;
+  flex-flow: column wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.card img {
+  width: 10vw;
+}
+
+.card .electron-logo {
+  -webkit-transform: scale(0.6);
+  transform: scale(0.6);
+}
+
+.green-card {
+  background-color: #1DE9b6;
+  border-radius: 10px;
+  border: 1px solid #181F27;
 }
 
 @media (min-width: 992px) {
@@ -269,7 +325,9 @@ header.masthead h2 {
 .portfolio h2,
 .portfolio h3,
 .portfolio h4,
-.portfolio h5 {
+.portfolio h5,
+.portfolio p,
+.portfolio li {
   color: #1DE9b6 !important;
 }
 

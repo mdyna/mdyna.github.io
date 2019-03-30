@@ -74,13 +74,6 @@
             <li class="nav-item mx-0 mx-lg-1">
               <a
                 class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-                href="#portfolio"
-                >Screenshots</a
-              >
-            </li>
-            <li class="nav-item mx-0 mx-lg-1">
-              <a
-                class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
                 href="#about"
                 >Features</a
               >
@@ -99,7 +92,7 @@
 
     <!-- Header -->
     <header class="masthead bg-primary text-white text-center">
-      <div class="container">
+      <div class="container header">
         <img
           class="img-fluid mb-5 d-block mx-auto"
           src="img/logoCircle.png"
@@ -107,10 +100,46 @@
           alt=""
         />
         <h1 class="text-uppercase mb-0 dark">Mdyna</h1>
-        <hr class="star-dark primary" />
-        <h2 class="font-weight-light mb-0">
-          Markdown Support - Dark Theme - Code Syntax Highlighting
-        </h2>
+            <h4 class="font-weight-light mb-0">
+                Markdown Support
+            </h4>
+            <h4 class="font-weight-light mb-0">
+                Light/Dark Theme
+            </h4>
+            <h4 class="font-weight-light mb-0">
+                Code Syntax Highlighting
+            </h4>
+            <h4 class="font-weight-light mb-0">
+                WYSIWYG Editor
+            </h4>
+      </div>
+      <div class="container">
+
+        <section class="card">
+            <h4 class="font-weight-light mb-0">
+              A markdown note keeper
+                built with React and Electron
+              </h4>
+              <div>
+
+                <a href="https://reactjs.org/" >
+
+                  <img src="./img/React-icon.svg" alt="react-logo"/>
+                </a>
+                <a href="https://electronjs.org/">
+
+                  <img class="electron-logo" src="./img/electron-logo.svg" alt="electron-logo"/>
+                </a>
+              </div>
+          </section>
+            <section class="card">
+                <div class="text-center mt-4 download-buttons">
+                  <a class="btn btn-xl btn-outline-light" href="#">
+                    <i class="fas fa-download mr-2"></i> Download Now!
+                  </a>
+                </div>
+            </div>
+          </section>
       </div>
     </header>
 
@@ -118,80 +147,74 @@
     <section class="portfolio" id="portfolio">
       <div class="container">
         <h2 class="text-center text-uppercase text-secondary mb-0">
-          Screenshots
+          Features
         </h2>
         <hr class="star-dyna mb-5" />
         <div class="row">
-          <div class="col-md-6 col-lg-4">
-            <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-1">
-              <div
-                class="portfolio-item-caption d-flex position-absolute h-100 w-100"
-              >
-                <div
-                  class="portfolio-item-caption-content my-auto w-100 text-center text-white"
-                >
-                  <i class="fas fa-search-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="img/portfolio/ss1.png" alt="">
-            </a>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-3">
-              <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
-                <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
-                  <i class="fas fa-search-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="img/portfolio/ss3.png" alt="">
-            </a>
-          </div>
-
-          <div class="col-md-6 col-lg-4">
-            <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-4">
-              <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
-                <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
-                  <i class="fas fa-search-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="img/portfolio/ss4.png" alt="">
-            </a>
-          </div>
-
-          <div class="col-md-6 col-lg-4">
-            <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-5">
-              <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
-                <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
-                  <i class="fas fa-search-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="img/portfolio/ss5.png" alt="">
-            </a>
-          </div>
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="bg-primary text-white mb-0" id="about">
-      <div class="container">
-        <h2 class="text-center text-uppercase text-white">Features</h2>
-        <hr class="star-light mb-5" />
-        <div class="row">
           <div class="col-lg-4 ml-auto">
-            <h5>Markdown support</h5>
+            <h4>Markdown support</h4>
             <p class="lead">Mdyna supports Git flavoured markdown.</p>
-            <h5>Card labels</h5>
+            <h5> Titles </h5>
+              <ul>
+                <li>
+                    # Title
+                </li>
+                <li>
+                    ## Sub-Title
+                </li>
+                <li>
+                    ### Sub-sub-title ^^
+                </li>
+              </ul>
+              <h5> Formatting</h5>
+              <ul>
+                <li>
+                    <i>*Italic*</i>
+                </li>
+                <li>
+                    <b>**bold**</b>
+                </li>
+                <li>
+                    <s>~~strikethrough~~</s>
+                </li>
+              </ul>
+              <h5> Lists</h5>
+              <ul>
+                <li>
+                    1. Ordered List
+                </li>
+                <li>
+                    * Unordered List
+                </li>
+                <li>
+                    - [ ] Task List
+                </li>
+              </ul>
+              <h5> Other</h5>
+              <ul>
+                <li>
+                    `inline code`
+                </li>
+                <li>
+                    ```
+                      code snippet
+                    ```
+                </li>
+                <li>
+                    >  quote
+                </li>
+                <li>
+                    [Link](http://mdyna.github.io)
+                </li>
+              </ul>
+              <h5>Click <a class="github-link" href="https://github.github.com/gfm/" target="_blank">here</a> to read the full specification</h5>
+          </div>
+          <div class="col-lg-4 ml-auto">
+          <h5>Card labels</h5>
             <p class="lead">
               Mdyna also has support for card labels, which you can use to
               categorize your cards and filter them.
             </p>
-            <h5>Card colors</h5>
-            <p class="lead">
-              In case labels aren't enough, you may want to assign different
-              colors based on cards
-            </p>
-          </div>
-          <div class="col-lg-4 ml-auto">
             <h5>Card colors</h5>
             <p class="lead">
               In case labels aren't enough, you may want to assign different
@@ -205,19 +228,6 @@
             <p class="lead">Supporting multiple languages:</p>
             <img class="img-fluid mb-5" src="img/code2.png" alt="" />
           </div>
-          <div class="col-lg-4 ml-auto">
-            <h5>Repeatable cards with statistics</h5>
-            <p class="lead">
-              Mdyna allows you to create repeatable cards, or tasks, which will
-              show you an analysis of how you've been upholding them.
-            </p>
-            <img class="img-fluid mb-5" src="img/tasks1.png" alt="" />
-          </div>
-        </div>
-        <div class="text-center mt-4 download-buttons">
-          <a class="btn btn-xl btn-outline-light" href="#">
-            <i class="fas fa-download mr-2"></i> Download Now!
-          </a>
         </div>
       </div>
     </section>

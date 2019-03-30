@@ -1,6 +1,8 @@
 header.masthead {
   padding-top: calc(6rem + 72px);
-  padding-bottom: 6rem;
+  padding-bottom: 2rem;
+  display: flex;
+  flex-flow: row nowrap;
   h1 {
     font-size: 3rem;
     line-height: 3rem;
@@ -10,6 +12,35 @@ header.masthead {
     @include body-font;
   }
 }
+.header {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+}
+.card {
+  background-color: $secondary;
+  padding: 1vh 10vw;
+  width: 100%;
+  margin: 10px 0;
+  border-radius: 10px;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  img {
+    width: 10vw;
+  }
+  .electron-logo {
+    transform: scale(0.6);
+  }
+}
+
+.green-card {
+  background-color: $primary;
+  border-radius: 10px;
+  border: 1px solid $secondary;
+}
+
 @media (min-width: 992px) {
   header.masthead {
     padding-top: calc(6rem + 106px);
