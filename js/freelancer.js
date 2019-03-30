@@ -32,7 +32,7 @@
   function buttonHTML(link, name, icon) {
     var buttonMarkup =
     '<a class="btn btn-xl btn-outline-light" href="' + link + '">'
-      + name + ' ' + icon
+      + name + ' Client' + icon
     + '</a>'
     return buttonMarkup;
   }
@@ -44,10 +44,11 @@
       var release = releases[i];
       var releaseExtension = getExtensionName(release.name);
       var releaseLink = release.browser_download_url;
+      var releaseOS = releaseExtension === 'exe' ? 'Windows' : 'Linux'
       var releaseIcon = releaseExtension === 'exe' ? '<i class="fab fa-windows"></i>'  : '<i class="fab fa-linux"></i>';
 
       if (isExtensionValid(releaseExtension)) {
-        newHTML += buttonHTML(releaseLink, release.name, releaseIcon);
+        newHTML += buttonHTML(releaseLink, releaseOS, releaseIcon);
       }
     }
     newHTML += '</div>';
