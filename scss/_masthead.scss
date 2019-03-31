@@ -2,7 +2,7 @@ header.masthead {
   padding-top: calc(6rem + 72px);
   padding-bottom: 2rem;
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   h1 {
     font-size: 3rem;
     line-height: 3rem;
