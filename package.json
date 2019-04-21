@@ -1,7 +1,7 @@
 {
   "name": "mdyna-landing-page",
   "description": "Forked from automatic-gatsbyjs-app-landing-page",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "author": "David Morais <davidmorais92@gmail.com>",
   "dependencies": {
     "axios": "^0.18.0",
