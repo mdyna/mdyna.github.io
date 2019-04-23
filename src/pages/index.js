@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 
+import Markdown from "markdown-to-jsx"
 import Layout from "../components/layout"
 import Api from "../components/api"
 import SEO from "../components/seo"
@@ -85,7 +86,6 @@ class IndexPage extends React.PureComponent {
   render() {
     const { data } = this.props
     const { ubuntuLink, windowsLink, releaseNotes, version } = this.state
-
     return (
       <Layout>
         <SEO title="Home" keywords={configs.app_keywords} />
@@ -246,7 +246,7 @@ class IndexPage extends React.PureComponent {
                   </a>
                 </h3>
                 <h2 className="appVersion">{version}</h2>
-                <p className="releaseNotes">{releaseNotes}</p>
+                <Markdown className="releaseNotes">{releaseNotes}</Markdown>
               </div>
               <div className="features">
                 <h1 className="featuresTitle">Features</h1>

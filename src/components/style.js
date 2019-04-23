@@ -263,11 +263,26 @@ export default createGlobalStyle`
     align-items: center;
     flex-grow: 1;
     flex: 0 1 auto;
+    h3 {
+      margin: 10px;
+      font-size: 2.2rem;
+    }
     .releaseNotes {
       color: ${configs.feature_text_color};
       line-height: 32px;
       margin-top: 26px;
       white-space: pre-line;
+      margin: 0 10vw;
+      font-size: 1.8rem;
+      h2 {
+        font-size: 2.5rem;
+      }
+      h3 {
+        font-size: 2.2rem;
+      }
+      ul {
+        margin: 5px 2.5vw;
+      }
     }
   }
 
