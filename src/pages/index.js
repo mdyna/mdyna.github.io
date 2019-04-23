@@ -132,6 +132,13 @@ class IndexPage extends React.PureComponent {
                         </a>
                       </li>
                     )}
+                    {configs.community_website && (
+                      <li>
+                        <a href={configs.community_website}>
+                          Community <i className="fas fa-comments" />
+                        </a>
+                      </li>
+                    )}
                   </ul>
                 </nav>
               </header>

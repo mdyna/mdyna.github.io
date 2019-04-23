@@ -174,6 +174,15 @@ export default createGlobalStyle`
     padding-left: 0px;
   }
 
+  nav > ul li a {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center
+    i {
+      margin-right: 3px;
+    }
+  }
+
   nav > ul li a:link,
   nav > ul li a:visited {
     text-decoration: none;

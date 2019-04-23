@@ -4,6 +4,7 @@ module.exports = {
   supported_extensions  : ['exe','AppImage'],
   google_analytics_ID   : "UA-138737086-1",                                        // Enter Google Analytics ID or ""
   app_github_url        : "https://github.com/mdyna/mdyna-app",                                  // Enter a link to downloadable file or (e.g. public Dropbox link to a .zip file).
+  community_website     : "https://spectrum.chat/mdyna",
   video_or_screenshot   : "screenshot",                                           // "screenshot" or "video"
   app_url               : "https://mdyna.dev",                            // Domain of your website without path_prefix.
   path_prefix           : "/",                                                    // Prefixes all links. For cases when deployed to example.github.io/automatic-gatsbyjs-app-landing-page/.
