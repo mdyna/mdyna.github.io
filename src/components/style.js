@@ -179,7 +179,7 @@ export default createGlobalStyle`
     flex-flow: row wrap;
     justify-content: center
     i {
-      margin-right: 3px;
+      margin-left: 5px;
     }
   }
 
