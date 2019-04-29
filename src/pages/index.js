@@ -224,18 +224,18 @@ class IndexPage extends React.PureComponent {
                 </div>
                 <div className="downloadButtonsContainer">
                   {windowsLink && (
-                    <a className="playStoreLink" href={windowsLink}>
+                    <a className="windowsStoreLink" href={windowsLink}>
                       <Img
-                        fixed={data.playStore.childImageSharp.fixed}
-                        className="playStore"
+                        fixed={data.windowsStore.childImageSharp.fixed}
+                        className="windowsStore"
                       />
                     </a>
                   )}
                   {ubuntuLink && (
-                    <a className="appStoreLink" href={ubuntuLink}>
+                    <a className="ubuntuStoreLink" href={ubuntuLink}>
                       <Img
-                        fixed={data.appStore.childImageSharp.fixed}
-                        className="appStore"
+                        fixed={data.ubuntuStore.childImageSharp.fixed}
+                        className="ubuntuStore"
                       />
                     </a>
                   )}
@@ -387,14 +387,14 @@ export const query = graphql`
         }
       }
     }
-    appStore: file(relativePath: { eq: "appstore.png" }) {
+    ubuntuStore: file(relativePath: { eq: "ubuntuStore.png" }) {
       childImageSharp {
         fixed(width: 220) {
           ...GatsbyImageSharpFixed
         }
       }
     }
-    playStore: file(relativePath: { eq: "playstore.png" }) {
+    windowsStore: file(relativePath: { eq: "windowsStore.png" }) {
       childImageSharp {
         fixed(height: 75) {
           ...GatsbyImageSharpFixed

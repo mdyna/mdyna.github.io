@@ -346,26 +346,26 @@ export default createGlobalStyle`
     }
   }
 
-  .playStore {
+  .windowsStore {
     height: 75px;
     margin-right: 24px;
   }
 
   @media only screen and (max-width: 992px) {
-    .playStore {
+    .windowsStore {
       margin-right: 24px;
       margin-bottom: 0px;
     }
   }
 
   @media only screen and (max-width: 528px) {
-    .playStore {
+    .windowsStore {
       margin-right: 0px;
       margin-bottom: 24px;
     }
   }
 
-  .appStore {
+  .ubuntuStore {
     height: 75px;
   }
 
