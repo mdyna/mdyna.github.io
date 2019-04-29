@@ -201,7 +201,7 @@ export default createGlobalStyle`
     grid-area: i;
     display: flex;
     flex-wrap: wrap;
-    padding-top: 140px;
+    padding-top: 120px;
     align-content: flex-start;
   }
 
@@ -337,6 +337,7 @@ export default createGlobalStyle`
   .downloadButtonsContainer {
     display: inline-block;
     margin-top: 42px;
+    padding-bottom: 24px;
     filter: drop-shadow(0px 5px 10px rgba(#000, 0.1)) drop-shadow(0px 1px 1px rgba(#000, 0.2));
   }
 
@@ -366,6 +367,11 @@ export default createGlobalStyle`
   }
 
   .ubuntuStore {
+    height: 75px;
+    margin-right: 24px;
+  }
+  .webStore {
+    margin-top: 24px;
     height: 75px;
   }
 

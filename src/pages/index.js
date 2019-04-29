@@ -239,6 +239,10 @@ class IndexPage extends React.PureComponent {
                       />
                     </a>
                   )}
+                  <Img
+                    fixed={data.webStore.childImageSharp.fixed}
+                    className="webStore"
+                  />
                 </div>
               </div>
               <div className="changelog">
@@ -388,6 +392,13 @@ export const query = graphql`
       }
     }
     ubuntuStore: file(relativePath: { eq: "ubuntuStore.png" }) {
+      childImageSharp {
+        fixed(width: 220) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    webStore: file(relativePath: { eq: "webStore.png" }) {
       childImageSharp {
         fixed(width: 220) {
           ...GatsbyImageSharpFixed
