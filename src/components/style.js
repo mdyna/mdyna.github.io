@@ -2,6 +2,7 @@ import { createGlobalStyle } from "styled-components"
 import configs from "../../site-config"
 
 const soon_badge_color = "#ef6c00"
+const beta_badge_color = "#b22f23"
 
 export default createGlobalStyle`
   html {
@@ -506,6 +507,16 @@ export default createGlobalStyle`
     margin-left: 5px;
     border-radius: 5px;
   }
+
+.betaBadge{
+  background-color: ${beta_badge_color};
+  font-size: 10px;
+  color: ${configs.feature_icons_background_color};
+  padding: 3px;
+  vertical-align: text-top;
+  margin-left: 5px;
+  border-radius: 5px;
+}
 
   .feature:nth-child(-n + 3) {
     padding-top: 0px;

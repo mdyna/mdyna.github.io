@@ -291,6 +291,11 @@ class IndexPage extends React.PureComponent {
                               ) : (
                                 ""
                               )}
+                              {feature.beta ? (
+                                <span className="betaBadge">BETA</span>
+                              ) : (
+                                ""
+                              )}
                             </h3>
                             <p>{feature.description}</p>
                           </div>

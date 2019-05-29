@@ -80,9 +80,9 @@ module.exports = {
     {
       title: "Sync with Cloud",
       description:
-        "Sync your notes with Google Drive or Dropbox so you can access them in multiple devices",
+        "Sync your notes with Google Drive or Dropbox so you can access them in multiple devices. Just change your directory to your favorite cloud service",
       fontawesome_icon_name: "cloud",
-      soon: true,
+      beta: true,
     },
     {
       title: "Share cards",
