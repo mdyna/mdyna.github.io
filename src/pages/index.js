@@ -257,7 +257,9 @@ class IndexPage extends React.PureComponent {
                   </a>
                 </h3>
                 <h2 className="appVersion">{version}</h2>
-                <Markdown className="releaseNotes">{releaseNotes}</Markdown>
+                <Markdown className="releaseNotes">
+                  {releaseNotes || ""}
+                </Markdown>
               </div>
               <div className="features">
                 <h1 className="featuresTitle">Features</h1>
@@ -292,7 +294,7 @@ class IndexPage extends React.PureComponent {
                                 ""
                               )}
                               {feature.beta ? (
-                                <span className="betaBadge">BETA</span>
+                                <span className="soonBadge">BETA</span>
                               ) : (
                                 ""
                               )}
