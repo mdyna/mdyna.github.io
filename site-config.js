@@ -1,14 +1,14 @@
 module.exports = {
   // App Info
   github_api_url: "https://api.github.com/repos/mdyna/mdyna-app",
-  supported_extensions: ["exe", "AppImage"],
+  supported_extensions: ["exe", "AppImage", "deb"],
   google_analytics_ID: "UA-138737086-1", // Enter Google Analytics ID or ""
   app_github_url: "https://github.com/mdyna/mdyna-app", // Enter a link to downloadable file or (e.g. public Dropbox link to a .zip file).
   community_website: "https://spectrum.chat/mdyna",
   video_or_screenshot: "screenshot", // "screenshot" or "video"
   app_url: "https://mdyna.dev", // Domain of your website without path_prefix.
   path_prefix: "/", // Prefixes all links. For cases when deployed to example.github.io/automatic-gatsbyjs-app-landing-page/.
-  app_name: "Mdyna",
+  app_name: "MDyna",
   app_price: "Free",
   app_creation_date: "2018",
   app_description:
@@ -16,6 +16,10 @@ module.exports = {
   app_keywords: [
     "markdown",
     "code",
+    "rich text",
+    "cards",
+    "keep",
+    "notebook",
     "notes",
     "cards",
     "dark theme",
