@@ -93,11 +93,7 @@ class IndexPage extends React.PureComponent {
         <div
           className="imageWrapper"
           style={{
-            backgroundImage: `linear-gradient(${
-              configs.cover_overlay_color_rgba
-            },${configs.cover_overlay_color_rgba}),url(${
-              data.headerImage.childImageSharp.fluid.src
-            })`,
+            backgroundImage: `linear-gradient(${configs.cover_overlay_color_rgba},${configs.cover_overlay_color_rgba}),url(${data.headerImage.childImageSharp.fluid.src})`,
           }}
         >
           <div className="headerBackground">
@@ -419,20 +415,6 @@ export const query = graphql`
         }
       }
     }
-    iphoneScreen: file(relativePath: { glob: "screenshot/*.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 900) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    videoScreen: file(
-      extension: { ne: "txt" }
-      relativePath: { glob: "videos/*" }
-    ) {
-      publicURL
-      extension
-    }
     appIconLarge: file(relativePath: { eq: "icon.png" }) {
       childImageSharp {
         fluid(maxWidth: 120) {
@@ -447,53 +429,16 @@ export const query = graphql`
         }
       }
     }
-    iphonePreviewBlack: file(relativePath: { eq: "black.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 400) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    monitorWithPrintsPreview: file(
-      relativePath: { eq: "monitor-with-prints.png" }
-    ) {
+    monitorWithPrintsPreview: file(relativePath: { eq: "mockup2.png" }) {
       childImageSharp {
         fluid(maxWidth: 900) {
           ...GatsbyImageSharpFluid
         }
       }
     }
-    monitorPreview: file(relativePath: { eq: "monitor.png" }) {
+    altMonitorWithPrintsPreview: file(relativePath: { eq: "mockup.png" }) {
       childImageSharp {
         fluid(maxWidth: 900) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    iphonePreviewBlue: file(relativePath: { eq: "blue.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 400) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    iphonePreviewCoral: file(relativePath: { eq: "coral.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 400) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    iphonePreviewWhite: file(relativePath: { eq: "white.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 400) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    iphonePreviewYellow: file(relativePath: { eq: "yellow.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 400) {
           ...GatsbyImageSharpFluid
         }
       }
