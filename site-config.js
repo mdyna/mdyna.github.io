@@ -106,7 +106,10 @@ module.exports = {
       fab: true,
     },
   ],
-  header_background: "rgba(0, 0, 0, 0.1)",
+  header_background: "#181F27",
+  main_color: "#1CE7B4",
+  title_color: "#15171F",
+  title_description_color: "#ffffff",
   topbar_title_color: "#ffffff",
   cover_overlay_color_rgba: "rgba(54, 59, 61, 0.8)",
   device_color: "monitor-with-prints", // Set to "black", "blue", "coral", "white", or "yellow"

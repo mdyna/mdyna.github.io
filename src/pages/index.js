@@ -6,7 +6,7 @@ import Markdown from "markdown-to-jsx"
 import Layout from "../components/layout"
 import Api from "../components/api"
 import SEO from "../components/seo"
-import Header from "../components/Header"
+import Nav from "../components/Nav"
 
 import "@fortawesome/fontawesome-free/css/all.min.css"
 
@@ -94,12 +94,12 @@ class IndexPage extends React.PureComponent {
         <div
           className="imageWrapper"
           style={{
-            backgroundImage: `linear-gradient(${configs.cover_overlay_color_rgba},${configs.cover_overlay_color_rgba}),url(${data.headerImage.childImageSharp.fluid.src})`,
+            background: configs.main_color,
           }}
         >
           <div className="headerBackground">
             <div className="container">
-              <Header data={data} />
+              <Nav data={data} />
               <div
                 className="iphonePreview"
                 style={{
@@ -173,7 +173,7 @@ class IndexPage extends React.PureComponent {
                   />
                 </div>
                 <div className="appNamePriceContainer">
-                  <h1 className="appName">{configs.app_name}</h1>
+                  <h1 className="appName">{configs.app_name.toUpperCase()}</h1>
                   <h2 className="appPrice">{configs.app_price}</h2>
                   <h3 className="appVersion">{version}</h3>
                 </div>

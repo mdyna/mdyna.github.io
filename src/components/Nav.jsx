@@ -1,6 +1,6 @@
 import React from "react"
-import Img from "gatsby-image"
 import { graphql } from "gatsby"
+import Img from "gatsby-image"
 import configs from "../../site-config"
 
 class Header extends React.PureComponent {
@@ -26,7 +26,9 @@ class Header extends React.PureComponent {
               className="headerIcon"
             />
           </div>
-          <p className="headerName">{configs.app_name}</p>
+          <h1 className="headerName" style={{ color: configs.main_color }}>
+            {configs.app_name}
+          </h1>
         </div>
         <nav>
           <ul>

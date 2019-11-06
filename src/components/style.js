@@ -235,7 +235,10 @@ export default createGlobalStyle`
   }
 
   .appName {
-    color: ${configs.app_title_color};
+    font-weight: 600;
+    font-size: 10em;
+    line-height: 272px;
+    color: ${configs.title_color};
   }
 
   .appPrice {
