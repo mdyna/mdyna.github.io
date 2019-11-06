@@ -45,14 +45,14 @@ module.exports = {
     {
       title: "Markdown suppport",
       description:
-        "Mdyna supports GFM Syntax. With Mdyna, you write markdown and you get beautiful formatted cards.",
+        "MDyna supports GFM Syntax. With MDyna, you write markdown and you get beautiful formatted cards.",
       fontawesome_icon_name: "markdown",
       fab: true,
     },
     {
       title: "Dark & Light theme",
       description:
-        "Use the app with your favorite color theme, Mdyna has both light and dark theme, and more incoming",
+        "Use the app with your favorite color theme, MDyna has both light and dark theme, and more incoming",
       fontawesome_icon_name: "palette",
     },
     {
@@ -64,7 +64,7 @@ module.exports = {
     {
       title: "Code Syntax Highlighting",
       description:
-        "Javascript, Python, Java, C#... Mdyna cards support code syntax highlighting for every language.",
+        "Javascript, Python, Java, C#... MDyna cards support code syntax highlighting for every language.",
       fontawesome_icon_name: "code",
     },
     {
@@ -77,13 +77,13 @@ module.exports = {
     {
       title: "Powerful editor",
       description:
-        "In case you're not entirely familiar with the markdown syntax. Mdyna offers a powerful WYSIWYG editor.",
+        "In case you're not entirely familiar with the markdown syntax. MDyna offers a powerful WYSIWYG editor.",
       fontawesome_icon_name: "pen-nib",
     },
     {
       title: "Keyboard shortcuts",
       description:
-        "Mdyna offers several keyboard shortcuts for navigation, filtering and editing cards.",
+        "MDyna offers several keyboard shortcuts for navigation, filtering and editing cards.",
       fontawesome_icon_name: "keyboard",
     },
     {
@@ -101,7 +101,7 @@ module.exports = {
     {
       title: "Free",
       description:
-        "Built with React, Electron and other Open Source tools, Mdyna is completely free and open source. No ads, no subscription, forever.",
+        "Built with React, Electron and other Open Source tools, MDyna is completely free and open source. No ads, no subscription, forever.",
       fontawesome_icon_name: "react",
       fab: true,
     },

@@ -26,14 +26,14 @@ dyna supports conde syntax highlighting, likeso:
 ```javascript
     //javascript
     const dyna = "Awesome"
-    console.log("Mdyna is ", dyna)
+    console.log("MDyna is ", dyna)
 ```
 
 Supporting multiple languages:
 ```python
     #python
     dyna = "Love"
-    print("Mdyna is", dyna)
+    print("MDyna is", dyna)
 ```
 
 ## Repeatable cards with statistics
