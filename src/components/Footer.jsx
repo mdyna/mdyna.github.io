@@ -2,7 +2,7 @@ import React from "react"
 import Img from "gatsby-image"
 import configs from "../../site-config"
 
-class Header extends React.PureComponent {
+class Footer extends React.PureComponent {
   render() {
     const { data, version } = this.props
     return (
@@ -74,4 +74,4 @@ class Header extends React.PureComponent {
   }
 }
 
-export default Header
+export default Footer

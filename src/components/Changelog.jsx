@@ -2,7 +2,7 @@ import React from "react"
 import configs from "../../site-config"
 import Markdown from "markdown-to-jsx"
 
-class Header extends React.PureComponent {
+class Changelog extends React.PureComponent {
   render() {
     const { releaseNotes, version } = this.props
     return (
@@ -24,4 +24,4 @@ class Header extends React.PureComponent {
   }
 }
 
-export default Header
+export default Changelog

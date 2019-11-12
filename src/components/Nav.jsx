@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import configs from "../../site-config"
 
-class Header extends React.PureComponent {
+class Nav extends React.PureComponent {
   render() {
     const { data } = this.props
     return (
@@ -53,4 +53,4 @@ class Header extends React.PureComponent {
   }
 }
 
-export default Header
+export default Nav

@@ -2,7 +2,7 @@ import React from "react"
 import Img from "gatsby-image"
 import configs from "../../site-config"
 
-class Header extends React.PureComponent {
+class Features extends React.PureComponent {
   render() {
     return (
       <div className="features">
@@ -49,4 +49,4 @@ class Header extends React.PureComponent {
   }
 }
 
-export default Header
+export default Features
