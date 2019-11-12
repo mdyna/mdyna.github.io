@@ -5,7 +5,7 @@ const soon_badge_color = "#ef6c00"
 const beta_badge_color = "#b22f23"
 
 export default createGlobalStyle`
-@import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,700&display=swap');
   html {
     font-size: 62.5%;
     font-family: ${configs.font};
@@ -146,7 +146,6 @@ export default createGlobalStyle`
     clip-path: url(#shape);
     margin-right: 15px;
   }
-
   // Navigation Links
   nav {
     width: 100%;
@@ -214,8 +213,8 @@ export default createGlobalStyle`
   }
 
   .appIconLarge {
-    width: 120px;
-    height: 120px;
+    width: 220px;
+    height: 220px;
     -webkit-clip-path: url(#shape120);
     clip-path: url(#shape120);
   }
@@ -224,15 +223,16 @@ export default createGlobalStyle`
     display: flex;
     flex: 0 1 auto;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-end;
+    width: 100%;
     justify-content: center;
     margin-left: 30px;
   }
 
   .appName {
-    font-weight: 600;
+    font-weight: 700;
     font-size: 10em;
-    line-height: 272px;
+    line-height: 180px;
     color: ${configs.title_color};
   }
 
@@ -241,6 +241,15 @@ export default createGlobalStyle`
     font-weight: normal;
     margin-top: 13px;
   }
+  .appLead {
+    color: ${configs.title_description_color};
+    font-family: Montserrat;
+    font-weight: bold;
+    font-size: 64px;
+    line-height: 57px;
+    max-width: 50px;
+  }
+
   .appVersion {
     color: ${configs.app_version_color};
     font-weight: normal;
@@ -317,12 +326,15 @@ export default createGlobalStyle`
     font-weight: normal;
     width: 100%;
     align-items: flex-start;
-    margin-top: 45px;
     flex: 0 1 auto;
     line-height: 1.5;
   }
 
   .appDescription {
+    letter-spacing: 2.8px;
+    display: flex;
+    align-items: flex-end;
+    font-weight: 800;
     color: ${configs.app_description_color};
   }
 

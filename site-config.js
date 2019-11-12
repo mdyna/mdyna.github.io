@@ -11,8 +11,11 @@ module.exports = {
   app_name: "MDyna",
   app_price: "Free",
   app_creation_date: "2018",
+  app_lead: "RICH \n MARKDOWN \n EDITOR",
+  app_sub_lead:
+    "DARK MODE \n EMOJI SUPPORT \n EXPORT CARDS TO .MD \n AND MORE...",
   app_description:
-    "Markdown | Code Syntax Highlighting | Dark Theme | WSIWYG Editor",
+    "MARKDOWN NOTES | GITHUB GIST SYNC | CODE SYNTAX HIGHLIGHTING",
   app_keywords: [
     "markdown",
     "code",
@@ -121,9 +124,9 @@ module.exports = {
   link_color: "#64ffda",
   app_title_color: "#1de9b6",
   changelog_title_color: "#1de9b6",
-  app_version_color: "#1de9b6",
+  app_version_color: "#181F27",
   app_price_color: "#ffffff",
-  app_description_color: "#ffffff",
+  app_description_color: "#181F27",
   feature_title_color: "#1de9b6",
   feature_text_color: "#c5c6c7",
   feature_icons_foreground_color: "#1de9b6",

@@ -103,10 +103,9 @@ class IndexPage extends React.PureComponent {
             <div className="container">
               <Nav data={data} />
               <Header data={data} version={version} />
-              <Changelog releaseNotes={releaseNotes} />
               <Features />
+              <Changelog releaseNotes={releaseNotes} />
               <Footer />
-              {/*TODO: Add App Store API */}
             </div>
           </div>
         </div>
@@ -149,7 +148,7 @@ export const query = graphql`
     }
     appIconLarge: file(relativePath: { eq: "icon.png" }) {
       childImageSharp {
-        fluid(maxWidth: 120) {
+        fluid(maxWidth: 220) {
           ...GatsbyImageSharpFluid
         }
       }
