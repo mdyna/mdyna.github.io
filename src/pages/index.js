@@ -1,6 +1,5 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Img from "gatsby-image"
 
 import Markdown from "markdown-to-jsx"
 import Layout from "../components/layout"
@@ -8,6 +7,7 @@ import Api from "../components/api"
 import SEO from "../components/seo"
 import Nav from "../components/Nav"
 import Header from "../components/Header"
+import Changelog from "../components/Changelog"
 
 import "@fortawesome/fontawesome-free/css/all.min.css"
 
@@ -102,22 +102,7 @@ class IndexPage extends React.PureComponent {
             <div className="container">
               <Nav data={data} />
               <Header data={data} version={version} />
-              <div className="changelog">
-                <h1 className="changelogTitle">Changelog</h1>
-                <h3>
-                  <a
-                    href={`${configs.app_github_url}/releases`}
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
-                    Full release notes
-                  </a>
-                </h3>
-                <h2 className="appVersion">{version}</h2>
-                <Markdown className="releaseNotes">
-                  {releaseNotes || ""}
-                </Markdown>
-              </div>
+              <Changelog releaseNotes={releaseNotes} />
               <div className="features">
                 <h1 className="featuresTitle">Features</h1>
                 <div className="features-container">
