@@ -5,6 +5,7 @@ const soon_badge_color = "#ef6c00"
 const beta_badge_color = "#b22f23"
 
 export default createGlobalStyle`
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans&display=swap');
   html {
     font-size: 62.5%;
     font-family: ${configs.font};
@@ -90,15 +91,10 @@ export default createGlobalStyle`
     max-width: ${configs.content_width};
     padding-left: 15px;
     padding-right: 15px;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 115px 700px auto auto auto;
-    grid-column-gap: 30px;
-    grid-template-areas:
-      "h h h h h h h h h h h h"
-      "p p p p p i i i i i i i"
-      "c c c c c c c c c c c c"
-      "l l l l l l l l l l l l"
-      "f f f f f f f f f f f f";
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
   }
 
   @media only screen and (max-width: 1070px) {
@@ -124,8 +120,8 @@ export default createGlobalStyle`
   }
 
   header {
-    grid-area: h;
     display: flex;
+    width: 100%;
   }
 
   .logo {
@@ -199,7 +195,6 @@ export default createGlobalStyle`
   // App Title, Price, Description and Links
 
   .appInfo {
-    grid-area: i;
     display: flex;
     flex-wrap: wrap;
     padding-top: 120px;
@@ -269,7 +264,6 @@ export default createGlobalStyle`
   }
 
   .changelog {
-    grid-area: l;
     display: flex;
     margin-top: 52px;
     flex-flow: column;
@@ -382,7 +376,6 @@ export default createGlobalStyle`
   // iPhone Device Preview
 
   .iphonePreview {
-    grid-area: p;
     background-size: 100%;
     background-repeat: no-repeat;
     margin-top: 100px;
@@ -477,7 +470,6 @@ export default createGlobalStyle`
   // Feature List
 
   .features {
-    grid-area: c;
     display: flex;
     flex-grow: 1;
     flex-wrap: wrap;
@@ -599,7 +591,6 @@ export default createGlobalStyle`
   // Footer
 
   footer {
-    grid-area: f;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
