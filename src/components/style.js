@@ -80,11 +80,6 @@ export default createGlobalStyle`
     border-radius: 0px 0px 40px 40px;
   }
 
-  .headerBackground {
-    height: 115px;
-    background-color: ${configs.header_background};
-  }
-
   .container {
     // Set up the container for the site content
     display: grid;
@@ -122,7 +117,12 @@ export default createGlobalStyle`
 
   header {
     display: flex;
+    padding: 0px 50px;
+    position: sticky;
+    top: 0;
     width: 100%;
+    background-color: ${configs.header_background};
+    z-index: 2;
   }
 
   .logo {

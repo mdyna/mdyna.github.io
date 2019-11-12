@@ -36,19 +36,21 @@ class Nav extends React.PureComponent {
               <a href="#features">FEATURES</a>
             </li>
             <li>
-              <a href="#download">DOWNLOAD</a>
+              <a href="#download">
+                DOWNLOAD<i class="fas fa-download"></i>
+              </a>
             </li>
             {configs.app_github_url && (
               <li>
                 <a href={configs.app_github_url}>
-                  GitHub <i className="fab fa-github" />
+                  GITHUB <i className="fab fa-github" />
                 </a>
               </li>
             )}
             {configs.community_website && (
               <li>
                 <a href={configs.community_website}>
-                  Community <i className="fas fa-comments" />
+                  COMMUNITY <i className="fas fa-comments" />
                 </a>
               </li>
             )}
