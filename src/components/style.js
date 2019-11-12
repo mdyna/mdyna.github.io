@@ -10,6 +10,7 @@ export default createGlobalStyle`
     font-size: 62.5%;
     font-family: ${configs.font};
     line-height: 1;
+    scroll-behavior: smooth;
   }
 
   body {
@@ -261,12 +262,6 @@ export default createGlobalStyle`
     margin-top: 13px;
   }
 
-  .appVersion {
-    color: ${configs.app_version_color};
-    font-weight: light;
-    margin-top: 13px;
-  }
-
   .featuresTitle {
     color: ${configs.feature_title_color};
     margin-top: 13px;
@@ -328,6 +323,35 @@ export default createGlobalStyle`
     align-items: flex-start;
     flex: 0 1 auto;
     line-height: 1.5;
+    flex-flow: row wrap;
+    display: flex;
+    width: 100%;
+    height: 210px;
+    justify-content: space-between;
+  }
+  .versionAndDownloadContainer {
+    align-self: flex-end;
+    .appVersion {
+      text-align: center;
+      font-size: 14px;
+
+    }
+    a {
+      background: #15171F;
+      font-family: Open Sans;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 24px;
+      color: ${configs.app_title_color};
+      border-radius: 100px;
+      padding: 15px;
+      border: none;
+      i {
+        margin: 0 5px;
+        font-weight: 400;
+        font-size: 24px;
+      }
+    }
   }
 
   .appDescription {

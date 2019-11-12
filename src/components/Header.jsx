@@ -19,7 +19,13 @@ class Header extends React.PureComponent {
         </div>
         <div className="appDescriptionContainer">
           <p className="appLead">{configs.app_lead}</p>
-          <p className="appVersion">{version}</p>
+          <div className="versionAndDownloadContainer">
+            <a href="#download">
+              Download now<i class="fab fa-windows"></i>
+              <i class="fab fa-ubuntu"></i>
+            </a>
+            <p className="appVersion">{version}</p>
+          </div>
         </div>
         <div className="downloadButtonsContainer"> </div>
       </div>

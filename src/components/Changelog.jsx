@@ -6,7 +6,7 @@ class Changelog extends React.PureComponent {
   render() {
     const { releaseNotes, version } = this.props
     return (
-      <div className="changelog">
+      <div className="changelog" id="download">
         <h1 className="changelogTitle">Changelog</h1>
         <h3>
           <a

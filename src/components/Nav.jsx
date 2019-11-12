@@ -32,6 +32,12 @@ class Nav extends React.PureComponent {
         </div>
         <nav>
           <ul>
+            <li>
+              <a href="#features">FEATURES</a>
+            </li>
+            <li>
+              <a href="#download">DOWNLOAD</a>
+            </li>
             {configs.app_github_url && (
               <li>
                 <a href={configs.app_github_url}>
