@@ -198,7 +198,7 @@ export default createGlobalStyle`
   .appInfo {
     display: flex;
     flex-wrap: wrap;
-    padding-top: 120px;
+    padding-top: 60px;
     align-content: flex-start;
   }
 
@@ -283,6 +283,18 @@ export default createGlobalStyle`
   }
 
   .featuresTitle {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 72px;
+    line-height: 78px;
+    text-transform: uppercase;
+    /* or 108% */
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 24px;
     color: ${configs.feature_title_color};
     margin-top: 13px;
   }
@@ -530,14 +542,36 @@ export default createGlobalStyle`
     flex-grow: 1;
     flex-wrap: wrap;
     justify-content: center;
-    .features-container {
+    background-color: ${configs.features_background_color};
+    button {
+      background-color: ${configs.main_color};
+      color: ${configs.feature_button_text_color};
+      font-family: Montserrat;
+      padding: 25px;
+      border-radius: 50px;
+      outline: none;
+      box-shadow: none;
+      border: none;
+      font-weight: bold;
+      font-size: 12px;
+      line-height: 15px;
+      margin: 30px auto;
+      text-transform: uppercase;
+    }
+    .featuresContainer {
       margin-top: 52px;
       display: flex;
       flex: 0 1 auto;
       flex-flow: row wrap;
       justify-content: flex-start;
       align-content: flex-start;
+      overflow: hidden;
       flex-grow: 1;
+      transition: all 0.5s ease-in;
+      height: 200px;
+      &.open {
+        height: 1500px;
+      }
     }
   }
 
