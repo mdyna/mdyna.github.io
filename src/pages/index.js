@@ -94,16 +94,7 @@ class IndexPage extends React.PureComponent {
         <SEO title="Home" keywords={configs.app_keywords} />
 
         <Nav data={data} />
-        <div
-          className="imageWrapper"
-          style={{
-            background: configs.main_color,
-          }}
-        >
-          <div className="container">
-            <Header data={data} version={version} />
-          </div>
-        </div>
+        <Header data={data} version={version} />
         <div className="container">
           <Features />
           <Changelog releaseNotes={releaseNotes} />

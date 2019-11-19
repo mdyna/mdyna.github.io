@@ -63,6 +63,7 @@ export default createGlobalStyle`
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
+    width: 100%;
     border-radius: 0px 0px 40px 40px;
   }
 
@@ -241,6 +242,25 @@ export default createGlobalStyle`
     color: ${configs.app_price_color};
     font-weight: normal;
     margin-top: 13px;
+  }
+  .altMonitorWithPrintsPreview{
+    width: 596px;
+  }
+  .appSubLeadContainer {
+    display: flex;
+    flex-flow: row wrap;
+    max-width: 1100px;
+    margin: 30px auto;
+  }
+  .appSublead {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 57px;
+    max-width: 455px;
+    color: ${configs.title_description_color};
+
   }
   .appLead {
     color: ${configs.title_description_color};

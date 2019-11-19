@@ -37,7 +37,7 @@ class Nav extends React.PureComponent {
             </li>
             <li>
               <a href="#download">
-                DOWNLOAD<i class="fas fa-download"></i>
+                DOWNLOAD<i className="fas fa-download"></i>
               </a>
             </li>
             {configs.app_github_url && (
