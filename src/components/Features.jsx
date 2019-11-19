@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import Img from "gatsby-image"
 import configs from "../../site-config"
 
@@ -7,7 +7,14 @@ class Features extends React.PureComponent {
     featuresOpen: false,
   }
 
+  titleRef = React.createRef()
+
+  scrollToRef = ref => window.scrollTo(0, ref.current.offsetTop - 250)
+
   toggleFeatures() {
+    if (this.state.featuresOpen) {
+      this.scrollToRef(this.titleRef)
+    }
     this.setState({
       featuresOpen: !this.state.featuresOpen,
     })
@@ -18,6 +25,7 @@ class Features extends React.PureComponent {
       <div className="features">
         <h1 className="featuresTitle">Features</h1>
         <div
+          ref={this.titleRef}
           className={`featuresContainer ${this.state.featuresOpen && "open"}`}
         >
           {configs.features.map((feature, index) => {
@@ -25,19 +33,18 @@ class Features extends React.PureComponent {
               if (feature.title) {
                 return (
                   <div className="feature" key={`feature-${feature.title}`}>
-                    <div>
-                      <span className="fa-stack fa-1x">
-                        <i className={`iconBack fas fa-circle fa-stack-2x`} />
-                        <i
-                          className={`iconTop ${
-                            feature.fab ? "fab" : "fas"
-                          } fa-${feature.fontawesome_icon_name} fa-stack-1x`}
-                        />
-                      </span>
+                    <div className="featureTitle">
+                      <i
+                        className={`iconTop ${feature.fab ? "fab" : "fas"} fa-${
+                          feature.fontawesome_icon_name
+                        }`}
+                      >
+                        {feature.titleImage}
+                      </i>
+                      <h1>{feature.title}</h1>
                     </div>
                     <div className="featureText">
                       <h3>
-                        {feature.title}
                         {feature.soon ? (
                           <span className="soonBadge">Soon</span>
                         ) : (

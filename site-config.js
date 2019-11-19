@@ -46,67 +46,66 @@ module.exports = {
   // Features List
   features: [
     {
-      title: "Markdown suppport",
+      title: "Github Gist Sync",
       description:
-        "MDyna supports GFM Syntax. With MDyna, you write markdown and you get beautiful formatted cards.",
-      fontawesome_icon_name: "markdown",
+        "Login with your GitHub account and MDyna will sync your cards to a gist, allowing you to see them in multiple devices.",
+      fontawesome_icon_name: "github",
       fab: true,
-    },
-    {
-      title: "Dark & Light theme",
-      description:
-        "Use the app with your favorite color theme, MDyna has both light and dark theme, and more incoming",
-      fontawesome_icon_name: "palette",
-    },
-    {
-      title: "Labels",
-      description:
-        "Tag your cards with labels so you can easily look for them.",
-      fontawesome_icon_name: "tags",
     },
     {
       title: "Code Syntax Highlighting",
       description:
-        "Javascript, Python, Java, C#... MDyna cards support code syntax highlighting for every language.",
+        "MDyna supports multiple languages and offers code syntax highlighting with several light and dark themes.",
       fontawesome_icon_name: "code",
     },
     {
-      title: "Sync with Github Gist",
-      fab: true,
+      title: "Multiple tagging options",
       description:
-        "Login with your GitHub account and MDyna will sync your cards to a gist, allowing you to see them in multiple devices",
-      fontawesome_icon_name: "github",
+        "Tag your cards with labels so you can find them easily. You can seperate your cards between infinite boards.",
+      fontawesome_icon_name: "tags",
     },
     {
-      title: "Powerful editor",
+      title: "Rich markdown editor",
+      fab: true,
       description:
-        "In case you're not entirely familiar with the markdown syntax. MDyna offers a powerful WYSIWYG editor.",
-      fontawesome_icon_name: "pen-nib",
+        "MDyna uses a Rich Markdown Editor. You get many powerful formatting tools whilst still being able to write and render Markdown.",
+      fontawesome_icon_name: "markdown",
     },
     {
       title: "Keyboard shortcuts",
       description:
-        "MDyna offers several keyboard shortcuts for navigation, filtering and editing cards.",
+        "Besides supporting the most common editor shortcuts, MDyna also provides  quick ways to manage and filter your cards.",
       fontawesome_icon_name: "keyboard",
+    },
+    {
+      title: "Export board cards as md files",
+      description:
+        "MDyna can also export your cards to the familiar Markdown (.md) format.Exports are based on boards. Also allowing you to export all cards via the INBOX board",
+      fontawesome_icon_name: "file-export",
     },
     {
       title: "Boards",
       description:
-        "In case labels and colors aren't enough, you can also organize your cards by boards, so that you can only see the cards that are relevant to you",
+        "Besides labels, MDyna suggests categorizing your cards per boards. Boards are togglable so you can be at work and not be afraid someone will come up behind you and see your grocery list.",
       fontawesome_icon_name: "chalkboard",
     },
     {
-      title: "Sync with Cloud",
+      title: "Emoji Support",
       description:
-        "Sync your notes with Google Drive or Dropbox so you can access them in multiple devices. Just change your directory to your favorite cloud service",
-      fontawesome_icon_name: "cloud",
+        "MDyna supports most most emojis out of the box, while also providing keyboard shortcuts for a Slack-like experience.",
+      titleImage: "🚀",
+    },
+    {
+      title: "Multiple theming options",
+      description:
+        "MDyna currently has two built-in themes for the application and several more for code syntax",
+      fontawesome_icon_name: "palette",
     },
     {
       title: "Free",
       description:
         "Built with React, Electron and other Open Source tools, MDyna is completely free and open source. No ads, no subscription, forever.",
-      fontawesome_icon_name: "react",
-      fab: true,
+      fontawesome_icon_name: "hand-holding-usd",
     },
   ],
   header_background: "#15171F",

@@ -563,35 +563,51 @@ export default createGlobalStyle`
       display: flex;
       flex: 0 1 auto;
       flex-flow: row wrap;
-      justify-content: flex-start;
-      align-content: flex-start;
+      justify-content: center;
       overflow: hidden;
       flex-grow: 1;
       transition: all 0.5s ease-in;
-      height: 200px;
+      max-height: 350px;
       &.open {
-        height: 1500px;
+        max-height: 15000px;
       }
     }
   }
 
   .feature {
     display: flex;
-    padding-top: 63px;
-    padding-left: 15px;
-    padding-right: 15px;
-    width: calc(100% / 3);
+    flex-flow: column nowrap;
+    margin: 50px;
+    width: 240px;
+    .featureTitle {
+      display: flex;
+      flex-flow: column nowrap;
+      font-family: Montserrat;
+      text-align: center;
+      font-style: normal;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 12px;
+      margin-bottom: 20px;
+      color: ${configs.feature_title_color};
+      i {
+        margin: 20px;
+        font-size: 64px;
+      }
+    }
+  .featureText > p {
+    color: ${configs.feature_text_color};
+    margin-top: 8px;
+    line-height: 1.5;
+    font-family: Open Sans;
+    text-align: center;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 22px;
   }
+}
 
-  .soonBadge{
-    background-color: ${soon_badge_color};
-    font-size: 10px;
-    color: ${configs.feature_icons_background_color};
-    padding: 3px;
-    vertical-align: text-top;
-    margin-left: 5px;
-    border-radius: 5px;
-  }
 
 .betaBadge{
   background-color: ${beta_badge_color};
@@ -631,19 +647,6 @@ export default createGlobalStyle`
     color: ${configs.social_icons_foreground_color};
   }
 
-  .featureText {
-    margin-left: 18px;
-  }
-
-  .featureText > h3 {
-    color: ${configs.feature_title_color};
-  }
-
-  .featureText > p {
-    color: ${configs.feature_text_color};
-    margin-top: 8px;
-    line-height: 1.5;
-  }
 
   @media only screen and (max-width: 992px) {
     .features {
