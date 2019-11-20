@@ -246,6 +246,9 @@ export default createGlobalStyle`
   .altMonitorWithPrintsPreview{
     width: 596px;
   }
+  .monitorWithPrintsPreview {
+    width: 596px;
+  }
   .appSubLeadContainer {
     display: flex;
     flex-flow: row wrap;
