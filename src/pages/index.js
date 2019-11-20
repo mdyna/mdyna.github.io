@@ -13,6 +13,7 @@ import Footer from "../components/Footer"
 import "@fortawesome/fontawesome-free/css/all.min.css"
 
 import configs from "../../site-config"
+import CTA from "../components/CTA"
 
 function getExtensionName(name) {
   const split = (name && name.split(".")) || ""
@@ -25,11 +26,10 @@ function isExtensionValid(extension) {
 
 class IndexPage extends React.PureComponent {
   state = {
-    ubuntuLink: "",
     version: "",
     releases: [],
     releaseNotes: "",
-    windowsLink: "",
+    downloadLinks: [],
   }
 
   getReleases() {
@@ -63,23 +63,17 @@ class IndexPage extends React.PureComponent {
 
   getDownloadLinks() {
     const { releases } = this.state
+    const downloadLinks = []
     if (releases) {
       for (let i = 0; i < releases.length; i++) {
         const release = releases[i]
         const extension = getExtensionName(release.name)
         if (isExtensionValid(extension)) {
-          if (extension === "exe") {
-            this.setState({
-              windowsLink: release.browser_download_url,
-            })
-          } else {
-            this.setState({
-              ubuntuLink: release.browser_download_url,
-            })
-          }
+          downloadLinks.push(release.browser_download_url)
         }
       }
     }
+    this.setState({ downloadLinks })
   }
 
   componentDidMount() {
@@ -88,7 +82,7 @@ class IndexPage extends React.PureComponent {
 
   render() {
     const { data } = this.props
-    const { ubuntuLink, windowsLink, releaseNotes, version } = this.state
+    const { releaseNotes, version, downloadLinks } = this.state
     return (
       <Layout>
         <SEO title="Home" keywords={configs.app_keywords} />
@@ -97,6 +91,7 @@ class IndexPage extends React.PureComponent {
         <Header data={data} version={version} />
         <div className="container">
           <Features />
+          <CTA data={data} downloadLinks={downloadLinks} />
           <Changelog releaseNotes={releaseNotes} />
           <Footer />
         </div>
