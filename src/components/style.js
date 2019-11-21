@@ -330,6 +330,29 @@ export default createGlobalStyle`
       line-height: 26px;
       color: ${configs.cta_subtitle_color};
     }
+    .download-buttons {
+      display: flex;
+      a {
+        background-color: ${configs.cta_title_color};
+        padding: 10px 25px;
+        margin: 15px;
+        line-height: 18px;
+        font-family: Open Sans;
+        font-weight: bold;
+        font-size: 14px;
+        border: none;
+        border-radius: 100px;
+        color: ${configs.main_color};
+        i {
+          font-weight: normal;
+          font-size: 18px;
+        }
+        span {
+          display: block;
+          font-weight: normal;
+        }
+      }
+    }
   }
   .changelog {
     display: flex;

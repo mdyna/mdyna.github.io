@@ -23,7 +23,7 @@ class Features extends React.PureComponent {
   render() {
     return (
       <div className="container">
-        <div className="features">
+        <div className="features" id="features">
           <h1 className="featuresTitle">Features</h1>
           <div
             ref={this.titleRef}

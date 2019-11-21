@@ -3,9 +3,14 @@ import Img from "gatsby-image"
 import configs from "../../site-config"
 
 class CTA extends React.PureComponent {
+  getExtension = downloadLink => {
+    const splitLink =
+      downloadLink && downloadLink.split && downloadLink.split(".")
+    return splitLink[splitLink.length - 1]
+  }
   render() {
     const { downloadLinks, data } = this.props
-    console.log(downloadLinks)
+    console.log(downloadLinks.map(link => this.getExtension(link)))
     return (
       <div className="cta" id="cta">
         <div className="container">
@@ -20,9 +25,18 @@ class CTA extends React.PureComponent {
             fluid={data.monitorWithPrintsPreview.childImageSharp.fluid}
             className="monitorWithPrintsPreview"
           />
-          <div className="download-buttons">
-            <button>Download</button>
-            <button>Download</button> <button>Download</button>
+          <div className="download-buttons" id="download">
+            {downloadLinks.map(link => {
+              const extension = this.getExtension(link)
+              return (
+                <a href={link}>
+                  Download{" "}
+                  {(extension === "exe" && <i className="fab fa-windows" />) ||
+                    (extension === "deb" && <i className="fab fa-ubuntu" />)}
+                  <span>{extension}</span>
+                </a>
+              )
+            })}
           </div>
         </div>
       </div>
