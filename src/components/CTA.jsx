@@ -13,7 +13,7 @@ class CTA extends React.PureComponent {
             <h1>
               <i className="fas fa-download" />
             </h1>
-            <h1>Ready to gige it a try ?</h1>
+            <h1>Ready to give it a try ?</h1>
             <h3>Download the MDyna client for free</h3>
           </div>
           <Img

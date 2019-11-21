@@ -89,12 +89,10 @@ class IndexPage extends React.PureComponent {
 
         <Nav data={data} />
         <Header data={data} version={version} />
-        <div className="container">
-          <Features />
-          <CTA data={data} downloadLinks={downloadLinks} />
-          <Changelog releaseNotes={releaseNotes} />
-          <Footer />
-        </div>
+        <Features />
+        <CTA data={data} downloadLinks={downloadLinks} />
+        <Changelog releaseNotes={releaseNotes} />
+        <Footer />
       </Layout>
     )
   }

@@ -302,6 +302,35 @@ export default createGlobalStyle`
     margin-top: 13px;
   }
 
+  .cta {
+    background-color: ${configs.main_color};
+    padding: 30px;
+    color: ${configs.cta_title_color};
+    text-align: center;
+    width: 100%;
+    .cta-text {
+      margin: 30px auto;
+    }
+    h1 {
+      font-family: Montserrat;
+      text-transform: uppercase;
+      font-weight: normal;
+      font-size: 36px;
+      line-height: 48px;
+      & i {
+        margin-bottom: 10px;
+        font-size: 100px;
+      }
+    }
+    h3 {
+      font-family: Open Sans;
+      font-weight: normal;
+      font-size: 14px;
+      margin-top: 20px;
+      line-height: 26px;
+      color: ${configs.cta_subtitle_color};
+    }
+  }
   .changelog {
     display: flex;
     margin-top: 52px;

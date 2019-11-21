@@ -31,7 +31,6 @@ module.exports = {
     "electron",
     "grommet",
   ],
-
   // Personal Info
   your_name: "David Morais",
   your_link: "https://dmorais92.github.com",
@@ -114,7 +113,6 @@ module.exports = {
   title_description_color: "#ffffff",
   topbar_title_color: "#ffffff",
   cover_overlay_color_rgba: "rgba(54, 59, 61, 0.8)",
-  device_color: "monitor-with-prints", // Set to "black", "blue", "coral", "white", or "yellow"
   body_background_color: "#181f27",
   primary_text_color: "#1de9b6",
   content_width: "1170px",
@@ -123,6 +121,8 @@ module.exports = {
   link_color: "#64ffda",
   app_title_color: "#1de9b6",
   changelog_title_color: "#1de9b6",
+  cta_title_color: "#15171F",
+  cta_subtitle_color: "#459883",
   app_version_color: "#181F27",
   app_price_color: "#ffffff",
   app_description_color: "#181F27",
