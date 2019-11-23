@@ -52,7 +52,7 @@ class IndexPage extends React.PureComponent {
                 releases: newReleases,
               })
               localStorage.setItem("version", newVersion)
-              localStorage.setItem("releases", newReleases)
+              localStorage.setItem("releases", JSON.stringify(newReleases))
               localStorage.setItem("releaseNotes", newNotes)
             }
           }
@@ -60,7 +60,7 @@ class IndexPage extends React.PureComponent {
         return this.setState({
           version: localStorage.getItem("version"),
           releaseNotes: localStorage.getItem("releaseNotes"),
-          releases: localStorage.getItem("releases"),
+          releases: JSON.parse(localStorage.getItem("releases")),
         })
       })
       .then(() => this.getDownloadLinks())

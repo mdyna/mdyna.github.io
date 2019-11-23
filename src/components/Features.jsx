@@ -13,7 +13,7 @@ class Features extends React.PureComponent {
 
   toggleFeatures() {
     trackCustomEvent({
-      category: "Page Interaction",
+      category: "Page Interactions",
       action: "Click",
       label: `Features toggled`,
       value: 5,
