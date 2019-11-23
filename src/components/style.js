@@ -5,10 +5,12 @@ const soon_badge_color = "#ef6c00"
 const beta_badge_color = "#b22f23"
 
 export default createGlobalStyle`
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,700&display=swap');
   html {
     font-size: 62.5%;
     font-family: ${configs.font};
     line-height: 1;
+    scroll-behavior: smooth;
   }
 
   body {
@@ -61,6 +63,7 @@ export default createGlobalStyle`
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
+    width: 100%;
     border-radius: 0px 0px 40px 40px;
   }
 
@@ -78,11 +81,6 @@ export default createGlobalStyle`
     border-radius: 0px 0px 40px 40px;
   }
 
-  .headerBackground {
-    height: 115px;
-    background-color: ${configs.header_background};
-  }
-
   .container {
     // Set up the container for the site content
     display: grid;
@@ -90,42 +88,19 @@ export default createGlobalStyle`
     max-width: ${configs.content_width};
     padding-left: 15px;
     padding-right: 15px;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 115px 700px auto auto auto;
-    grid-column-gap: 30px;
-    grid-template-areas:
-      "h h h h h h h h h h h h"
-      "p p p p p i i i i i i i"
-      "c c c c c c c c c c c c"
-      "l l l l l l l l l l l l"
-      "f f f f f f f f f f f f";
-  }
-
-  @media only screen and (max-width: 1070px) {
-    .container {
-      // Set up the container for the site content
-      grid-template-rows: 115px 700px auto auto auto;
-    }
-  }
-
-  @media only screen and (max-width: 992px) {
-    .container {
-      grid-column-gap: 0px;
-      grid-template-columns: 1;
-      grid-template-rows: 115px auto auto auto auto auto;
-      grid-template-areas:
-        "h h h h h h h h h h h h"
-        "i i i i i i i i i i i i"
-        "p p p p p p p p p p p p"
-        "c c c c c c c c c c c c"
-        "l l l l l l l l l l l l"
-        "f f f f f f f f f f f f";
-    }
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
   }
 
   header {
-    grid-area: h;
     display: flex;
+    padding: 0px 50px;
+    top: 0;
+    width: 100%;
+    background-color: ${configs.header_background};
+    z-index: 2;
   }
 
   .logo {
@@ -133,7 +108,6 @@ export default createGlobalStyle`
     width: 100%;
     justify-content: flex-start;
     align-items: center;
-    height: 115px;
   }
 
   .logo > p {
@@ -145,19 +119,16 @@ export default createGlobalStyle`
 
   .headerIcon {
     width: 50px;
-    height: 50px;
     -webkit-clip-path: url(#shape);
     clip-path: url(#shape);
     margin-right: 15px;
   }
-
   // Navigation Links
   nav {
     width: 100%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    height: 115px;
   }
 
   nav > ul {
@@ -184,6 +155,25 @@ export default createGlobalStyle`
     }
   }
 
+  @media only screen and (max-width: 992px) {
+    header {
+      padding: 0;
+    }
+    nav > ul {
+      color: #fff;
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: flex-end;
+    }
+    nav > ul li {
+      padding: 0;
+      i {
+        display: none !important;
+      }
+    }
+  }
+
+
   nav > ul li a:link,
   nav > ul li a:visited {
     text-decoration: none;
@@ -199,10 +189,9 @@ export default createGlobalStyle`
   // App Title, Price, Description and Links
 
   .appInfo {
-    grid-area: i;
     display: flex;
     flex-wrap: wrap;
-    padding-top: 120px;
+    padding-top: 60px;
     align-content: flex-start;
   }
 
@@ -219,8 +208,8 @@ export default createGlobalStyle`
   }
 
   .appIconLarge {
-    width: 120px;
-    height: 120px;
+    width: 220px;
+    height: 220px;
     -webkit-clip-path: url(#shape120);
     clip-path: url(#shape120);
   }
@@ -229,13 +218,17 @@ export default createGlobalStyle`
     display: flex;
     flex: 0 1 auto;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-end;
+    width: 100%;
     justify-content: center;
     margin-left: 30px;
   }
 
   .appName {
-    color: ${configs.app_title_color};
+    font-weight: 700;
+    font-size: 10em;
+    line-height: 180px;
+    color: ${configs.title_color};
   }
 
   .appPrice {
@@ -243,30 +236,154 @@ export default createGlobalStyle`
     font-weight: normal;
     margin-top: 13px;
   }
+  .altMonitorWithPrintsPreview{
+    width: 596px;
+  }
+  .monitorWithPrintsPreview {
+    width: 596px;
+  }
+  @media only screen and (max-width: 992px) {
+    .altMonitorWithPrintsPreview{
+      width: 100%;
+    }
+    .monitorWithPrintsPreview {
+      width: 100%;
+    }
+  }
+  .appSubLeadContainer {
+    display: flex;
+    flex-flow: row wrap;
+    max-width: 1100px;
+    margin: 30px auto;
+  }
+  .appSublead {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 57px;
+    max-width: 455px;
+    color: ${configs.title_description_color};
+
+  }
+  .appLead {
+    color: ${configs.title_description_color};
+    font-family: Montserrat;
+    font-weight: bold;
+    font-size: 64px;
+    line-height: 57px;
+    max-width: 50px;
+  }
+
   .appVersion {
     color: ${configs.app_version_color};
     font-weight: normal;
-    margin-top: 13px;
+    margin: 15px;
   }
+
+  @media only screen and (max-width: 992px) {
+    .appName {
+      margin-top: 0px;
+      font-size: 20vw;
+      line-height: 20vw;
+    }
+    .appLead {
+      font-size: 10vw;
+      line-height: 10vw;
+    }
+    .appSublead {
+      font-size: 10vw;
+    }
+    .appSubLeadContainer {
+      padding: 5px;
+    }
+  }
+
 
   .changelogTitle {
     color: ${configs.changelog_title_color};
     margin-top: 13px;
   }
 
-  .appVersion {
-    color: ${configs.app_version_color};
-    font-weight: light;
-    margin-top: 13px;
-  }
-
   .featuresTitle {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 72px;
+    line-height: 78px;
+    text-transform: uppercase;
+    /* or 108% */
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 24px;
     color: ${configs.feature_title_color};
     margin-top: 13px;
   }
 
+  .cta {
+    background-color: ${configs.main_color};
+    padding: 30px;
+    color: ${configs.cta_title_color};
+    text-align: center;
+    width: 100%;
+    .cta-text {
+      margin: 30px auto;
+    }
+    h1 {
+      font-family: Montserrat;
+      text-transform: uppercase;
+      font-weight: normal;
+      font-size: 36px;
+      line-height: 48px;
+      & i {
+        margin-bottom: 10px;
+        font-size: 100px;
+      }
+    }
+    h3 {
+      font-family: Open Sans;
+      font-weight: normal;
+      font-size: 14px;
+      margin-top: 20px;
+      line-height: 26px;
+      color: ${configs.cta_subtitle_color};
+    }
+
+    .download-buttons {
+      display: flex;
+      a {
+        background-color: ${configs.cta_title_color};
+        padding: 10px 25px;
+        margin: 15px;
+        line-height: 18px;
+        font-family: Open Sans;
+        font-weight: bold;
+        font-size: 14px;
+        border: none;
+        border-radius: 100px;
+        color: ${configs.main_color};
+        i {
+          font-weight: normal;
+          font-size: 18px;
+        }
+        span {
+          display: block;
+          font-weight: normal;
+        }
+      }
+    }
+    @media only screen and (max-width: 992px) {
+      .download-buttons{
+        flex-flow: column nowrap;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+  }
   .changelog {
-    grid-area: l;
     display: flex;
     margin-top: 52px;
     flex-flow: column;
@@ -285,6 +402,7 @@ export default createGlobalStyle`
       margin: 0 10vw;
       font-size: 1.8rem;
       h2 {
+        margin: 20px;
         font-size: 2.5rem;
       }
       h3 {
@@ -320,19 +438,44 @@ export default createGlobalStyle`
     font-weight: normal;
     width: 100%;
     align-items: flex-start;
-    margin-top: 45px;
     flex: 0 1 auto;
     line-height: 1.5;
+    flex-flow: row wrap;
+    display: flex;
+    width: 100%;
+    height: 210px;
+    justify-content: space-between;
+  }
+  .versionAndDownloadContainer {
+    align-self: flex-end;
+    .appVersion {
+      text-align: center;
+      font-size: 14px;
+    }
+    a {
+      background: #15171F;
+      font-family: Open Sans;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 24px;
+      color: ${configs.app_title_color};
+      border-radius: 100px;
+      padding: 15px;
+      border: none;
+      i {
+        margin: 0 5px;
+        font-weight: 400;
+        font-size: 24px;
+      }
+    }
   }
 
   .appDescription {
+    letter-spacing: 2.8px;
+    display: flex;
+    align-items: flex-end;
+    font-weight: 800;
     color: ${configs.app_description_color};
-  }
-
-  @media only screen and (max-width: 992px) {
-    .appDescription {
-      text-align: center;
-    }
   }
 
   .downloadButtonsContainer {
@@ -348,175 +491,90 @@ export default createGlobalStyle`
     }
   }
 
-  .windowsStore {
-    height: 75px;
-    margin-right: 24px;
-  }
-
-  @media only screen and (max-width: 992px) {
-    .windowsStore {
-      margin-right: 24px;
-      margin-bottom: 0px;
-    }
-  }
-
-  @media only screen and (max-width: 528px) {
-    .windowsStore {
-      margin-right: 0px;
-      margin-bottom: 24px;
-    }
-  }
-
-  .ubuntuStore {
-    height: 75px;
-    margin-right: 24px;
-  }
-  .webStore {
-    margin-top: 24px;
-    height: 75px;
-  }
-
-  // iPhone Device Preview
-
-  .iphonePreview {
-    grid-area: p;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    margin-top: 100px;
-  }
-
-  .iphoneScreen {
-    width: 349px;
-    -webkit-clip-path: url(#screenMask);
-    clip-path: url(#screenMask);
-    margin-left: 26px;
-    margin-top: 23px;
-  }
-
-  .videoContainer {
-    width: 349px;
-    height: 755px;
-    -webkit-clip-path: url(#screenMask);
-    clip-path: url(#screenMask);
-    margin-left: 26px;
-    margin-top: 23px;
-  }
-
-  .videoContainer > video {
-    width: 349px;
-    height: 755px;
-  }
-
-  @media only screen and (max-width: 1070px) {
-    .iphonePreview {
-      background-size: 100% auto;
-      min-height: 450px;
-    }
-
-    .iphoneScreen {
-      width: 322px;
-      margin-left: 24px;
-      margin-top: 22px;
-    }
-
-    .videoContainer {
-      width: 322px;
-      height: 698px;
-      margin-left: 24px;
-      margin-top: 22px;
-    }
-
-    .videoContainer > video {
-      width: 322px;
-      height: 698px;
-    }
-  }
-
-  @media only screen and (max-width: 992px) {
-    .iphonePreview {
-      display: flex;
-      background-size: 550px;
-      background-position: center 0;
-      margin-top: 47px;
-      justify-content: center;
-      padding-bottom: 75px;
-    }
-
-    .iphoneScreen {
-      width: 226px;
-      height: 488px;
-      -webkit-clip-path: url(#screenMask);
-      clip-path: url(#screenMask);
-      margin: 0px;
-      margin-top: 17px;
-    }
-
-    .videoContainer {
-      width: 226px;
-      height: 488px;
-      margin-left: 0px;
-      margin-top: 17px;
-    }
-
-    .videoContainer > video {
-      width: 226px;
-      height: 488px;
-    }
-  }
-
-  @media only screen and (max-width: 552px) {
-    .iphonePreview {
-      background-size: 100%;
-      min-height: 250px;
-    }
-  }
-
   // Feature List
 
   .features {
-    grid-area: c;
     display: flex;
     flex-grow: 1;
     flex-wrap: wrap;
     justify-content: center;
-    .features-container {
+    background-color: ${configs.features_background_color};
+    button {
+      background-color: ${configs.main_color};
+      color: ${configs.feature_button_text_color};
+      font-family: Montserrat;
+      padding: 25px;
+      border-radius: 50px;
+      outline: none;
+      box-shadow: none;
+      border: none;
+      font-weight: bold;
+      font-size: 12px;
+      line-height: 15px;
+      margin: 30px auto;
+      text-transform: uppercase;
+    }
+    .featuresContainer {
       margin-top: 52px;
       display: flex;
       flex: 0 1 auto;
       flex-flow: row wrap;
-      justify-content: flex-start;
-      align-content: flex-start;
+      justify-content: center;
+      overflow: hidden;
       flex-grow: 1;
+      transition: all 0.5s ease-in;
+      max-height: 350px;
+      &.open {
+        max-height: 15000px;
+      }
     }
   }
 
   .feature {
     display: flex;
-    padding-top: 63px;
-    padding-left: 15px;
-    padding-right: 15px;
-    width: calc(100% / 3);
+    flex-flow: column nowrap;
+    margin: 50px;
+    width: 240px;
+    .featureTitle {
+      display: flex;
+      flex-flow: column nowrap;
+      font-family: Montserrat;
+      text-align: center;
+      font-style: normal;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 12px;
+      margin-bottom: 20px;
+      color: ${configs.feature_title_color};
+      i {
+        margin: 20px;
+        font-size: 64px;
+      }
+    }
+  .featureText > p {
+    color: ${configs.feature_text_color};
+    margin-top: 8px;
+    line-height: 1.5;
+    font-family: Open Sans;
+    text-align: center;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 22px;
   }
-
-  .soonBadge{
-    background-color: ${soon_badge_color};
-    font-size: 10px;
-    color: ${configs.feature_icons_background_color};
-    padding: 3px;
-    vertical-align: text-top;
-    margin-left: 5px;
-    border-radius: 5px;
-  }
-
-.betaBadge{
-  background-color: ${beta_badge_color};
-  font-size: 10px;
-  color: ${configs.feature_icons_background_color};
-  padding: 3px;
-  vertical-align: text-top;
-  margin-left: 5px;
-  border-radius: 5px;
 }
+@media only screen and (max-width: 992px) {
+  .featuresTitle {
+    font-size: 15vw;
+    line-height: 15vw;
+    letter-spacing: 3px;
+  }
+  .appLead {
+    font-size: 10vw;
+    line-height: 10vw;
+  }
+}
+
 
   .feature:nth-child(-n + 3) {
     padding-top: 0px;
@@ -546,19 +604,6 @@ export default createGlobalStyle`
     color: ${configs.social_icons_foreground_color};
   }
 
-  .featureText {
-    margin-left: 18px;
-  }
-
-  .featureText > h3 {
-    color: ${configs.feature_title_color};
-  }
-
-  .featureText > p {
-    color: ${configs.feature_text_color};
-    margin-top: 8px;
-    line-height: 1.5;
-  }
 
   @media only screen and (max-width: 992px) {
     .features {
@@ -596,45 +641,78 @@ export default createGlobalStyle`
   // Footer
 
   footer {
-    grid-area: f;
+    margin-top: 50px;
     display: flex;
-    flex-wrap: wrap;
+    flex-flow: column nowrap;
     justify-content: center;
     align-content: center;
+    .personalContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-flow: row nowrap;
+      img {
+        height: 200px;
+        width: 200px;
+      }
+    }
   }
 
   .footerText {
     color: ${configs.footer_text_color};
-    display: block;
-    line-height: 1.5;
-    width: 100%;
     text-align: center;
-    padding-top: 70px;
-    padding-bottom: 70px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 60px;
+    line-height: 66px;
+    display: flex;
+    align-items: center;
+    display: flex;
+    flex-flow: column;
+    width: 1em;
+    align-items: flex-start;
+    a {
+      color: ${configs.footer_text_color};
+    }
+  }
+  .copyrightText {
+    color: ${configs.main_color};
+    margin-bottom: 50px;
+    text-align: center;
   }
 
   .footerIcons {
     padding-bottom: 70px;
+    margin: 64px 64px 0px 0px;
+    justify-content: center;
     display: flex;
   }
 
   @media only screen and (max-width: 992px) {
     .footerText {
-      color: ${configs.footer_text_color};
-      display: block;
-      line-height: 1.5;
       width: 100%;
+      line-height: 1.5;
       text-align: center;
       padding-top: 54px;
+      align-items: center;
       padding-bottom: 61px;
     }
-
     .footerIcons {
       padding-bottom: 70px;
       display: flex;
+      margin: 0 auto;
+    }
+    footer {
+      .personalContainer {
+        display: flex;
+        align-items: center;
+        flex-flow: column;
+      }
     }
   }
 
+  }
   .hidden {
     display: none;
   }
