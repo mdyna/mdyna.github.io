@@ -259,7 +259,7 @@ export default createGlobalStyle`
     font-weight: bold;
     font-size: 36px;
     line-height: 57px;
-    max-width: 455px;
+    max-width: 350px;
     color: ${configs.title_description_color};
 
   }
@@ -289,10 +289,13 @@ export default createGlobalStyle`
       line-height: 10vw;
     }
     .appSublead {
-      font-size: 10vw;
+      font-size: 5vw;
+      line-height: 5vw;
+      text-align: center
     }
     .appSubLeadContainer {
       padding: 5px;
+      justify-content: center
     }
   }
 
@@ -387,6 +390,9 @@ export default createGlobalStyle`
     align-items: center;
     flex-grow: 1;
     flex: 0 1 auto;
+    h2.appVersion{
+      color: ${configs.changelog_title_color};
+    }
     h3 {
       margin: 10px;
       font-size: 2.2rem;
@@ -519,10 +525,11 @@ export default createGlobalStyle`
       justify-content: center;
       overflow: hidden;
       flex-grow: 1;
-      transition: all 0.5s ease-in;
+      transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
       max-height: 350px;
       &.open {
-        max-height: 15000px;
+        max-height: 5000px;
+        transition: max-height 1s ease-in-out;
       }
     }
   }
