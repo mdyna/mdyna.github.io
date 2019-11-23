@@ -40,7 +40,7 @@ class Header extends React.PureComponent {
                       })
                     }}
                   >
-                    Download now<i className="fab fa-windows"></i>
+                    Download<i className="fab fa-windows"></i>
                     <i className="fab fa-ubuntu"></i>
                   </a>
                   <p className="appVersion">{version}</p>

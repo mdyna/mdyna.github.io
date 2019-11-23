@@ -1,14 +1,12 @@
 import React from "react"
-import Img from "gatsby-image"
 import configs from "../../site-config"
 
 class Footer extends React.PureComponent {
   render() {
-    const { data, version } = this.props
     return (
       <footer>
         <div className="personalContainer">
-          <img src={configs.gravatar_url} alt="gravatar-image" />
+          <img src={configs.gravatar_url} alt="gravatar" />
           <p className="footerText">
             by{" "}
             {configs.your_link ? (

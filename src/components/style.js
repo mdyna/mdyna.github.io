@@ -1,9 +1,6 @@
 import { createGlobalStyle } from "styled-components"
 import configs from "../../site-config"
 
-const soon_badge_color = "#ef6c00"
-const beta_badge_color = "#b22f23"
-
 export default createGlobalStyle`
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,700&display=swap');
   html {
