@@ -1,6 +1,6 @@
 import React from "react"
 import Img from "gatsby-image"
-import configs from "../../site-config"
+import { trackCustomEvent } from "gatsby-plugin-google-analytics"
 
 class CTA extends React.PureComponent {
   getExtension = downloadLink => {
@@ -10,7 +10,6 @@ class CTA extends React.PureComponent {
   }
   render() {
     const { downloadLinks, data } = this.props
-    console.log(downloadLinks.map(link => this.getExtension(link)))
     return (
       <div className="cta" id="cta">
         <div className="container">
@@ -26,10 +25,18 @@ class CTA extends React.PureComponent {
             className="monitorWithPrintsPreview"
           />
           <div className="download-buttons" id="download">
-            {downloadLinks.map(link => {
+            {downloadLinks.map((link, i) => {
               const extension = this.getExtension(link)
               return (
                 <a
+                  onClick={() => {
+                    trackCustomEvent({
+                      category: "Download",
+                      action: "Click",
+                      label: `${extension} Downloaded`,
+                      value: i,
+                    })
+                  }}
                   href={link}
                   key={`extension-${link}`}
                   aria-label={`${extension} download link`}

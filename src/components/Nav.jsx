@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { trackCustomEvent } from "gatsby-plugin-google-analytics"
 import Img from "gatsby-image"
 import configs from "../../site-config"
 
@@ -33,23 +33,65 @@ class Nav extends React.PureComponent {
         <nav>
           <ul>
             <li>
-              <a href="#features">FEATURES</a>
+              <a
+                onClick={() => {
+                  trackCustomEvent({
+                    category: "Page Interactions",
+                    action: "Navbar Click",
+                    label: `FEATURES`,
+                    value: 0,
+                  })
+                }}
+                href="#features"
+              >
+                FEATURES
+              </a>
             </li>
             <li>
-              <a href="#cta">
+              <a
+                onClick={() => {
+                  trackCustomEvent({
+                    category: "Page Interactions",
+                    action: "Navbar Click",
+                    label: `DOWNLOAD`,
+                    value: 1,
+                  })
+                }}
+                href="#cta"
+              >
                 DOWNLOAD<i className="fas fa-download"></i>
               </a>
             </li>
             {configs.app_github_url && (
               <li>
-                <a href={configs.app_github_url}>
+                <a
+                  onClick={() => {
+                    trackCustomEvent({
+                      category: "Page Interactions",
+                      action: "Navbar Click",
+                      label: `GITHUB`,
+                      value: 2,
+                    })
+                  }}
+                  href={configs.app_github_url}
+                >
                   GITHUB <i className="fab fa-github" />
                 </a>
               </li>
             )}
             {configs.community_website && (
               <li>
-                <a href={configs.community_website}>
+                <a
+                  onClick={() => {
+                    trackCustomEvent({
+                      category: "Page Interactions",
+                      action: "Navbar Click",
+                      label: `COMMUNITY`,
+                      value: 3,
+                    })
+                  }}
+                  href={configs.community_website}
+                >
                   COMMUNITY <i className="fas fa-comments" />
                 </a>
               </li>

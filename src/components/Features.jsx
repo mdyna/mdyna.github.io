@@ -1,5 +1,5 @@
 import React from "react"
-import Img from "gatsby-image"
+import { trackCustomEvent } from "gatsby-plugin-google-analytics"
 import configs from "../../site-config"
 
 class Features extends React.PureComponent {
@@ -12,6 +12,12 @@ class Features extends React.PureComponent {
   scrollToRef = ref => window.scrollTo(0, ref.current.offsetTop - 250)
 
   toggleFeatures() {
+    trackCustomEvent({
+      category: "Page Interaction",
+      action: "Click",
+      label: `Features toggled`,
+      value: 5,
+    })
     if (this.state.featuresOpen) {
       this.scrollToRef(this.titleRef)
     }
