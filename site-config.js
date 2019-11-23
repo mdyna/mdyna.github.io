@@ -12,8 +12,7 @@ module.exports = {
   app_price: "Free",
   app_creation_date: "2018",
   app_lead: "RICH \n MARKDOWN \n EDITOR",
-  app_sub_lead:
-    "DARK MODE \n EMOJI SUPPORT \n EXPORT CARDS TO .MD \n AND MORE...",
+  app_sub_lead: "DARK MODE \n EMOJI SUPPORT \n EXPORT CARDS \n AND MORE...",
   app_description:
     "MARKDOWN NOTES | GITHUB GIST SYNC | CODE SYNTAX HIGHLIGHTING",
   app_keywords: [
@@ -126,7 +125,7 @@ module.exports = {
   changelog_title_color: "#1CE7B4",
   cta_title_color: "#15171F",
   cta_subtitle_color: "#459883",
-  app_version_color: "#1CE7B4",
+  app_version_color: "#15171F",
   app_price_color: "#ffffff",
   app_description_color: "#181F27",
   feature_title_color: "#ffffff",

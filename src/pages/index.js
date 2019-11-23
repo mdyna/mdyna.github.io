@@ -46,7 +46,7 @@ class IndexPage extends React.PureComponent {
             const newNotes = releaseData.body
             const newReleases = releaseData.assets
             if (newVersion && newReleases.length && newNotes) {
-              return this.setState({
+              this.setState({
                 releaseNotes: newNotes,
                 version: newVersion,
                 releases: newReleases,

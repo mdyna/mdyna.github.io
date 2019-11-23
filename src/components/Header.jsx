@@ -1,6 +1,7 @@
 import React from "react"
 import Img from "gatsby-image"
 import configs from "../../site-config"
+import { trackCustomEvent } from "gatsby-plugin-google-analytics"
 
 class Header extends React.PureComponent {
   render() {
@@ -28,8 +29,18 @@ class Header extends React.PureComponent {
               <div className="appDescriptionContainer">
                 <p className="appLead">{configs.app_lead}</p>
                 <div className="versionAndDownloadContainer">
-                  <a href="#download">
-                    Download now<i className="fab fa-windows"></i>
+                  <a
+                    href="#cta"
+                    onClick={() => {
+                      trackCustomEvent({
+                        category: "Page Interactions",
+                        action: "Click",
+                        label: `CTA clicked`,
+                        value: 4,
+                      })
+                    }}
+                  >
+                    Download<i className="fab fa-windows"></i>
                     <i className="fab fa-ubuntu"></i>
                   </a>
                   <p className="appVersion">{version}</p>
