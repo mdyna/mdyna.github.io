@@ -94,32 +94,9 @@ export default createGlobalStyle`
     justify-content: center;
   }
 
-  @media only screen and (max-width: 1070px) {
-    .container {
-      // Set up the container for the site content
-      grid-template-rows: 115px 700px auto auto auto;
-    }
-  }
-
-  @media only screen and (max-width: 992px) {
-    .container {
-      grid-column-gap: 0px;
-      grid-template-columns: 1;
-      grid-template-rows: 115px auto auto auto auto auto;
-      grid-template-areas:
-        "h h h h h h h h h h h h"
-        "i i i i i i i i i i i i"
-        "p p p p p p p p p p p p"
-        "c c c c c c c c c c c c"
-        "l l l l l l l l l l l l"
-        "f f f f f f f f f f f f";
-    }
-  }
-
   header {
     display: flex;
     padding: 0px 50px;
-    position: sticky;
     top: 0;
     width: 100%;
     background-color: ${configs.header_background};
@@ -131,7 +108,6 @@ export default createGlobalStyle`
     width: 100%;
     justify-content: flex-start;
     align-items: center;
-    height: 115px;
   }
 
   .logo > p {
@@ -143,7 +119,6 @@ export default createGlobalStyle`
 
   .headerIcon {
     width: 50px;
-    height: 50px;
     -webkit-clip-path: url(#shape);
     clip-path: url(#shape);
     margin-right: 15px;
@@ -154,7 +129,6 @@ export default createGlobalStyle`
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    height: 115px;
   }
 
   nav > ul {
@@ -180,6 +154,25 @@ export default createGlobalStyle`
       margin-left: 5px;
     }
   }
+
+  @media only screen and (max-width: 992px) {
+    header {
+      padding: 0;
+    }
+    nav > ul {
+      color: #fff;
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: flex-end;
+    }
+    nav > ul li {
+      padding: 0;
+      i {
+        display: none !important;
+      }
+    }
+  }
+
 
   nav > ul li a:link,
   nav > ul li a:visited {
@@ -249,6 +242,14 @@ export default createGlobalStyle`
   .monitorWithPrintsPreview {
     width: 596px;
   }
+  @media only screen and (max-width: 992px) {
+    .altMonitorWithPrintsPreview{
+      width: 100%;
+    }
+    .monitorWithPrintsPreview {
+      width: 100%;
+    }
+  }
   .appSubLeadContainer {
     display: flex;
     flex-flow: row wrap;
@@ -277,8 +278,27 @@ export default createGlobalStyle`
   .appVersion {
     color: ${configs.app_version_color};
     font-weight: normal;
-    margin-top: 13px;
+    margin: 15px;
   }
+
+  @media only screen and (max-width: 992px) {
+    .appName {
+      margin-top: 0px;
+      font-size: 20vw;
+      line-height: 20vw;
+    }
+    .appLead {
+      font-size: 10vw;
+      line-height: 10vw;
+    }
+    .appSublead {
+      font-size: 10vw;
+    }
+    .appSubLeadContainer {
+      padding: 5px;
+    }
+  }
+
 
   .changelogTitle {
     color: ${configs.changelog_title_color};
@@ -330,6 +350,7 @@ export default createGlobalStyle`
       line-height: 26px;
       color: ${configs.cta_subtitle_color};
     }
+
     .download-buttons {
       display: flex;
       a {
@@ -353,6 +374,14 @@ export default createGlobalStyle`
         }
       }
     }
+    @media only screen and (max-width: 992px) {
+      .download-buttons{
+        flex-flow: column nowrap;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
   }
   .changelog {
     display: flex;
@@ -373,6 +402,7 @@ export default createGlobalStyle`
       margin: 0 10vw;
       font-size: 1.8rem;
       h2 {
+        margin: 20px;
         font-size: 2.5rem;
       }
       h3 {
@@ -421,7 +451,6 @@ export default createGlobalStyle`
     .appVersion {
       text-align: center;
       font-size: 14px;
-
     }
     a {
       background: #15171F;
@@ -449,12 +478,6 @@ export default createGlobalStyle`
     color: ${configs.app_description_color};
   }
 
-  @media only screen and (max-width: 992px) {
-    .appDescription {
-      text-align: center;
-    }
-  }
-
   .downloadButtonsContainer {
     display: inline-block;
     margin-top: 42px;
@@ -465,128 +488,6 @@ export default createGlobalStyle`
   @media only screen and (max-width: 992px) {
     .downloadButtonsContainer {
       text-align: center;
-    }
-  }
-
-  .windowsStore {
-    height: 75px;
-    margin-right: 24px;
-  }
-
-  @media only screen and (max-width: 992px) {
-    .windowsStore {
-      margin-right: 24px;
-      margin-bottom: 0px;
-    }
-  }
-
-  @media only screen and (max-width: 528px) {
-    .windowsStore {
-      margin-right: 0px;
-      margin-bottom: 24px;
-    }
-  }
-
-  .ubuntuStore {
-    height: 75px;
-    margin-right: 24px;
-  }
-  .webStore {
-    margin-top: 24px;
-    height: 75px;
-  }
-
-  // iPhone Device Preview
-
-  .iphonePreview {
-    background-size: 100%;
-    background-repeat: no-repeat;
-    margin-top: 100px;
-  }
-
-  .iphoneScreen {
-    width: 349px;
-    -webkit-clip-path: url(#screenMask);
-    clip-path: url(#screenMask);
-    margin-left: 26px;
-    margin-top: 23px;
-  }
-
-  .videoContainer {
-    width: 349px;
-    height: 755px;
-    -webkit-clip-path: url(#screenMask);
-    clip-path: url(#screenMask);
-    margin-left: 26px;
-    margin-top: 23px;
-  }
-
-  .videoContainer > video {
-    width: 349px;
-    height: 755px;
-  }
-
-  @media only screen and (max-width: 1070px) {
-    .iphonePreview {
-      background-size: 100% auto;
-      min-height: 450px;
-    }
-
-    .iphoneScreen {
-      width: 322px;
-      margin-left: 24px;
-      margin-top: 22px;
-    }
-
-    .videoContainer {
-      width: 322px;
-      height: 698px;
-      margin-left: 24px;
-      margin-top: 22px;
-    }
-
-    .videoContainer > video {
-      width: 322px;
-      height: 698px;
-    }
-  }
-
-  @media only screen and (max-width: 992px) {
-    .iphonePreview {
-      display: flex;
-      background-size: 550px;
-      background-position: center 0;
-      margin-top: 47px;
-      justify-content: center;
-      padding-bottom: 75px;
-    }
-
-    .iphoneScreen {
-      width: 226px;
-      height: 488px;
-      -webkit-clip-path: url(#screenMask);
-      clip-path: url(#screenMask);
-      margin: 0px;
-      margin-top: 17px;
-    }
-
-    .videoContainer {
-      width: 226px;
-      height: 488px;
-      margin-left: 0px;
-      margin-top: 17px;
-    }
-
-    .videoContainer > video {
-      width: 226px;
-      height: 488px;
-    }
-  }
-
-  @media only screen and (max-width: 552px) {
-    .iphonePreview {
-      background-size: 100%;
-      min-height: 250px;
     }
   }
 
@@ -662,17 +563,18 @@ export default createGlobalStyle`
     line-height: 22px;
   }
 }
-
-
-.betaBadge{
-  background-color: ${beta_badge_color};
-  font-size: 10px;
-  color: ${configs.feature_icons_background_color};
-  padding: 3px;
-  vertical-align: text-top;
-  margin-left: 5px;
-  border-radius: 5px;
+@media only screen and (max-width: 992px) {
+  .featuresTitle {
+    font-size: 15vw;
+    line-height: 15vw;
+    letter-spacing: 3px;
+  }
+  .appLead {
+    font-size: 10vw;
+    line-height: 10vw;
+  }
 }
+
 
   .feature:nth-child(-n + 3) {
     padding-top: 0px;
@@ -789,20 +691,28 @@ export default createGlobalStyle`
 
   @media only screen and (max-width: 992px) {
     .footerText {
-      color: ${configs.footer_text_color};
-      display: block;
+      width: 100%;
       line-height: 1.5;
       text-align: center;
       padding-top: 54px;
+      align-items: center;
       padding-bottom: 61px;
     }
-
     .footerIcons {
       padding-bottom: 70px;
       display: flex;
+      margin: 0 auto;
+    }
+    footer {
+      .personalContainer {
+        display: flex;
+        align-items: center;
+        flex-flow: column;
+      }
     }
   }
 
+  }
   .hidden {
     display: none;
   }
