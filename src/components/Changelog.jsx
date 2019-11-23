@@ -7,7 +7,7 @@ class Changelog extends React.PureComponent {
     const { releaseNotes, version } = this.props
     return (
       <div className="changelog" id="download">
-        <h1 className="changelogTitle">Changelog</h1>
+        <h1 className="changelogTitle">Latest Changes</h1>
         <h3>
           <a
             href={`${configs.app_github_url}/releases`}

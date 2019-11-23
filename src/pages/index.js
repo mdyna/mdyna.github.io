@@ -35,22 +35,27 @@ class IndexPage extends React.PureComponent {
   getReleases() {
     Api.get("/releases")
       .then(data => {
-        if (data && data.data && data.data[0]) {
-          const releaseData = data.data[0]
-          const newVersion = releaseData.tag_name
-          const newNotes = releaseData.body
-          const newReleases = releaseData.assets
-          if (newVersion && newReleases.length) {
-            localStorage.setItem("version", newVersion)
-            localStorage.setItem("releases", newReleases)
-            localStorage.setItem("releaseNotes", newNotes)
+        if (data && data.data) {
+          for (
+            let i = 0;
+            i < data.data.length && !this.state.releaseNotes;
+            i += 1
+          ) {
+            const releaseData = data.data[i]
+            const newVersion = releaseData.tag_name
+            const newNotes = releaseData.body
+            const newReleases = releaseData.assets
+            if (newVersion && newReleases.length && newNotes) {
+              return this.setState({
+                releaseNotes: newNotes,
+                version: newVersion,
+                releases: newReleases,
+              })
+              localStorage.setItem("version", newVersion)
+              localStorage.setItem("releases", newReleases)
+              localStorage.setItem("releaseNotes", newNotes)
+            }
           }
-
-          return this.setState({
-            releaseNotes: newNotes,
-            version: newVersion,
-            releases: newReleases,
-          })
         }
         return this.setState({
           version: localStorage.getItem("version"),
@@ -91,7 +96,7 @@ class IndexPage extends React.PureComponent {
         <Header data={data} version={version} />
         <Features />
         <CTA data={data} downloadLinks={downloadLinks} />
-        <Changelog releaseNotes={releaseNotes} />
+        <Changelog releaseNotes={releaseNotes} version={version} />
         <Footer />
       </Layout>
     )
