@@ -739,24 +739,51 @@ export default createGlobalStyle`
   // Footer
 
   footer {
+    margin-top: 50px;
     display: flex;
-    flex-wrap: wrap;
+    flex-flow: column nowrap;
     justify-content: center;
     align-content: center;
+    .personalContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-flow: row nowrap;
+      img {
+        height: 200px;
+        width: 200px;
+      }
+    }
   }
 
   .footerText {
     color: ${configs.footer_text_color};
-    display: block;
-    line-height: 1.5;
-    width: 100%;
     text-align: center;
-    padding-top: 70px;
-    padding-bottom: 70px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 60px;
+    line-height: 66px;
+    display: flex;
+    align-items: center;
+    display: flex;
+    flex-flow: column;
+    width: 1em;
+    align-items: flex-start;
+    a {
+      color: ${configs.footer_text_color};
+    }
+  }
+  .copyrightText {
+    color: ${configs.main_color};
+    margin-bottom: 50px;
+    text-align: center;
   }
 
   .footerIcons {
     padding-bottom: 70px;
+    margin: 64px 64px 0px 0px;
+    justify-content: center;
     display: flex;
   }
 
@@ -765,7 +792,6 @@ export default createGlobalStyle`
       color: ${configs.footer_text_color};
       display: block;
       line-height: 1.5;
-      width: 100%;
       text-align: center;
       padding-top: 54px;
       padding-bottom: 61px;

@@ -7,15 +7,17 @@ class Footer extends React.PureComponent {
     const { data, version } = this.props
     return (
       <footer>
-        <p className="footerText">
-          Made by{" "}
-          {configs.your_link ? (
-            <a href={configs.your_link}>{configs.your_name}</a>
-          ) : (
-            `${configs.your_name}`
-          )}
-          {configs.your_city && ` in ${configs.your_city}`}
-        </p>
+        <div className="personalContainer">
+          <img src={configs.gravatar_url} alt="gravatar-image" />
+          <p className="footerText">
+            by{" "}
+            {configs.your_link ? (
+              <a href={configs.your_link}>{configs.your_name}</a>
+            ) : (
+              `${configs.your_name}`
+            )}
+          </p>
+        </div>
         <div className="footerIcons">
           {configs.facebook_username && (
             <a
@@ -53,6 +55,18 @@ class Footer extends React.PureComponent {
             </a>
           )}
 
+          {configs.linkedin_username && (
+            <a
+              href={`https://www.linkedin.com/in/${configs.linkedin_username}`}
+              aria-label="LinkedIn"
+            >
+              <span className="fa-stack fa-1x">
+                <i className="socialIconBack fas fa-circle fa-stack-2x" />
+                <i className="socialIconTop fab fa-linkedin fa-stack-1x" />
+              </span>
+            </a>
+          )}
+
           {configs.email_address && (
             <a href={`mailto:${configs.email_address}`} aria-label="Email">
               <span className="fa-stack fa-1x">
@@ -62,7 +76,7 @@ class Footer extends React.PureComponent {
             </a>
           )}
         </div>
-        <p className="footerText">
+        <p className="copyrightText">
           <i className="fas fa-copyright" />
           {configs.app_creation_date === String(new Date().getFullYear())
             ? ` ${configs.app_creation_date} `

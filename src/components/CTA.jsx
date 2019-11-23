@@ -29,7 +29,11 @@ class CTA extends React.PureComponent {
             {downloadLinks.map(link => {
               const extension = this.getExtension(link)
               return (
-                <a href={link} key={`extension-${link}`}>
+                <a
+                  href={link}
+                  key={`extension-${link}`}
+                  aria-label={`${extension} download link`}
+                >
                   Download{" "}
                   {(extension === "exe" && <i className="fab fa-windows" />) ||
                     (extension === "deb" && <i className="fab fa-ubuntu" />)}
