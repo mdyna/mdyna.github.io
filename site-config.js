@@ -1,7 +1,7 @@
 module.exports = {
   // App Info
   github_api_url: "https://api.github.com/repos/mdyna/mdyna-app",
-  supported_extensions: ["exe", "AppImage", "deb"],
+  supported_extensions: ["exe", "AppImage", "deb", "dmg"],
   google_analytics_ID: "UA-138737086-1", // Enter Google Analytics ID or ""
   app_github_url: "https://github.com/mdyna/mdyna-app", // Enter a link to downloadable file or (e.g. public Dropbox link to a .zip file).
   community_website: "https://spectrum.chat/mdyna",
