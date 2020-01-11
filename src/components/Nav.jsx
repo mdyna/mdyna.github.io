@@ -35,12 +35,14 @@ class Nav extends React.PureComponent {
             <li>
               <a
                 onClick={() => {
-                  trackCustomEvent({
-                    category: "Page Interactions",
-                    action: "Navbar Click",
-                    label: `FEATURES`,
-                    value: 0,
-                  })
+                  if (trackCustomEvent) {
+                    trackCustomEvent({
+                      category: "Page Interactions",
+                      action: "Navbar Click",
+                      label: `FEATURES`,
+                      value: 0,
+                    })
+                  }
                 }}
                 href="#features"
               >
@@ -50,12 +52,14 @@ class Nav extends React.PureComponent {
             <li>
               <a
                 onClick={() => {
-                  trackCustomEvent({
-                    category: "Page Interactions",
-                    action: "Navbar Click",
-                    label: `DOWNLOAD`,
-                    value: 1,
-                  })
+                  if (trackCustomEvent) {
+                    trackCustomEvent({
+                      category: "Page Interactions",
+                      action: "Navbar Click",
+                      label: `DOWNLOAD`,
+                      value: 1,
+                    })
+                  }
                 }}
                 href="#cta"
               >
@@ -66,12 +70,14 @@ class Nav extends React.PureComponent {
               <li>
                 <a
                   onClick={() => {
-                    trackCustomEvent({
-                      category: "Page Interactions",
-                      action: "Navbar Click",
-                      label: `GITHUB`,
-                      value: 2,
-                    })
+                    if (trackCustomEvent) {
+                      trackCustomEvent({
+                        category: "Page Interactions",
+                        action: "Navbar Click",
+                        label: `GITHUB`,
+                        value: 2,
+                      })
+                    }
                   }}
                   href={configs.app_github_url}
                 >
@@ -83,12 +89,14 @@ class Nav extends React.PureComponent {
               <li>
                 <a
                   onClick={() => {
-                    trackCustomEvent({
-                      category: "Page Interactions",
-                      action: "Navbar Click",
-                      label: `COMMUNITY`,
-                      value: 3,
-                    })
+                    if (trackCustomEvent) {
+                      trackCustomEvent({
+                        category: "Page Interactions",
+                        action: "Navbar Click",
+                        label: `COMMUNITY`,
+                        value: 3,
+                      })
+                    }
                   }}
                   href={configs.community_website}
                 >

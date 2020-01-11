@@ -12,12 +12,14 @@ class Features extends React.PureComponent {
   scrollToRef = ref => window.scrollTo(0, ref.current.offsetTop - 250)
 
   toggleFeatures() {
-    trackCustomEvent({
-      category: "Page Interactions",
-      action: "Click",
-      label: `Features toggled`,
-      value: 5,
-    })
+    if (trackCustomEvent) {
+      trackCustomEvent({
+        category: "Page Interactions",
+        action: "Click",
+        label: `Features toggled`,
+        value: 5,
+      })
+    }
     if (this.state.featuresOpen) {
       this.scrollToRef(this.titleRef)
     }

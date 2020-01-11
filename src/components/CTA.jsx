@@ -30,12 +30,14 @@ class CTA extends React.PureComponent {
               return (
                 <a
                   onClick={() => {
-                    trackCustomEvent({
-                      category: "Download",
-                      action: "Click",
-                      label: `${extension} Downloaded`,
-                      value: i,
-                    })
+                    if (trackCustomEvent) {
+                      trackCustomEvent({
+                        category: "Download",
+                        action: "Click",
+                        label: `${extension} Downloaded`,
+                        value: i,
+                      })
+                    }
                   }}
                   href={link}
                   key={`extension-${link}`}
