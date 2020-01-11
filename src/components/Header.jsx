@@ -32,16 +32,19 @@ class Header extends React.PureComponent {
                   <a
                     href="#cta"
                     onClick={() => {
-                      trackCustomEvent({
-                        category: "Page Interactions",
-                        action: "Click",
-                        label: `CTA clicked`,
-                        value: 4,
-                      })
+                      if (trackCustomEvent) {
+                        trackCustomEvent({
+                          category: "Page Interactions",
+                          action: "Click",
+                          label: `CTA clicked`,
+                          value: 4,
+                        })
+                      }
                     }}
                   >
                     Download<i className="fab fa-windows"></i>
                     <i className="fab fa-ubuntu"></i>
+                    <i className="fab fa-apple"></i>
                   </a>
                   <p className="appVersion">{version}</p>
                 </div>

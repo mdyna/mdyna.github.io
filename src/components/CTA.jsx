@@ -43,7 +43,8 @@ class CTA extends React.PureComponent {
                 >
                   Download{" "}
                   {(extension === "exe" && <i className="fab fa-windows" />) ||
-                    (extension === "deb" && <i className="fab fa-ubuntu" />)}
+                    (extension === "deb" && <i className="fab fa-ubuntu" />) ||
+                    (extension === "dmg" && <i className="fab fa-apple" />)}
                   <span>{extension}</span>
                 </a>
               )
