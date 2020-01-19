@@ -650,6 +650,30 @@ export default createGlobalStyle`
     flex-flow: column nowrap;
     justify-content: center;
     align-content: center;
+
+
+    .donations {
+      background-color: ${configs.main_color};
+      padding: 30px;
+      margin: 10px;
+      color: ${configs.cta_title_color};
+      text-align: center;
+      width: 100%;
+      h3 {
+        margin: 5px;
+      }
+      .crypto {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        margin: 10px;
+        .crypto-value-pair {
+          margin: 10px;
+          dixplay: flex;
+          flex-flow: column wrap;
+        }
+      }
+    }
     .personalContainer {
       display: flex;
       justify-content: center;
@@ -661,6 +685,8 @@ export default createGlobalStyle`
       }
     }
   }
+
+
 
   .footerText {
     color: ${configs.footer_text_color};

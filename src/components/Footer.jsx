@@ -1,5 +1,6 @@
 import React from "react"
 import configs from "../../site-config"
+import PaypalDonateBtn from "./PayPalDonateBtn"
 
 class Footer extends React.PureComponent {
   render() {
@@ -73,6 +74,24 @@ class Footer extends React.PureComponent {
               </span>
             </a>
           )}
+        </div>
+        <div className="donations">
+          <h3>Buy me a coffee</h3>
+          <PaypalDonateBtn />
+          <div className="crypto">
+            <div className="crypto-value-pair">
+              <h4>ETH</h4>
+              <p>0x6a1FbdAF8ad2cAE7D05E89018Eb1B7C0Abca2191</p>
+            </div>
+            <div className="crypto-value-pair">
+              <h4>BTC</h4>
+              <p>13y1RAqVrBxYK9UEeFWBEyiExQE8CnkvkD</p>
+            </div>
+            <div className="crypto-value-pair">
+              <h4>LTC</h4>
+              <p>MRpfP5M4q5Y5oe3aZkCJModwLFHzftbAQ4</p>
+            </div>
+          </div>
         </div>
         <p className="copyrightText">
           <i className="fas fa-copyright" />
