@@ -92,6 +92,7 @@ export default createGlobalStyle`
   }
 
   header {
+    position: sticky;
     display: flex;
     padding: 0px 50px;
     top: 0;
