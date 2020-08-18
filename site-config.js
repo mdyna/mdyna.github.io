@@ -62,7 +62,7 @@ module.exports = {
     {
       title: "Multiple tagging options",
       description:
-        "Tag your cards with labels so you can find them easily. You can seperate your cards between infinite boards.",
+        "Tag your cards with labels so you can find them easily. You can separate your cards between infinite boards.",
       fontawesome_icon_name: "tags",
     },
     {
