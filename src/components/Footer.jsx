@@ -81,15 +81,15 @@ class Footer extends React.PureComponent {
           <div className="crypto">
             <div className="crypto-value-pair">
               <h4>ETH</h4>
-              <p>0x6a1FbdAF8ad2cAE7D05E89018Eb1B7C0Abca2191</p>
+              <p>0x644e0c3eaec6918807aeCC0995282F45d9279917</p>
             </div>
             <div className="crypto-value-pair">
               <h4>BTC</h4>
-              <p>13y1RAqVrBxYK9UEeFWBEyiExQE8CnkvkD</p>
+              <p>bc1qy56068kl0c4k5fruakrenrqp9f5w355tkdy8g6</p>
             </div>
             <div className="crypto-value-pair">
               <h4>LTC</h4>
-              <p>MRpfP5M4q5Y5oe3aZkCJModwLFHzftbAQ4</p>
+              <p>ltc1qdn0wqhv5vfjcq0a9n45m6s38hwxv22zqqn6cy0</p>
             </div>
           </div>
         </div>
