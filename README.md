@@ -43,8 +43,8 @@ Landing Page:
 
 👤 **David Morais**
 
-* Twitter: [@Psybork](https://twitter.com/Psybork)
-* Github: [@mdyna](https://github.com/mdyna)
+* Twitter: [@Psybork](https://twitter.com/davidsmorais)
+* Github: [@mdyna](https://github.com/davidsmorais)
 
 ## 🤝 Contributing
 http://mdyna.dev/
@@ -58,7 +58,7 @@ Give a ⭐️ if this project helped you!
 
 ## 📝 License
 
-Copyright © 2019 [David Morais](https://github.com/mdyna).<br />
+Copyright © 2019-2022 [David Morais](https://github.com/mdyna).<br />
 This project is [MIT](https://github.com/Mdyna/Mdyna-app/blob/master/LICENSE) licensed.
 
 ***

@@ -32,14 +32,13 @@ module.exports = {
   ],
   // Personal Info
   your_name: "David Morais",
-  your_link: "https://dmorais92.github.com",
+  your_link: "https://dsmorais.com",
   your_city: "Lisbon",
-  email_address: "davidmorais92@gmail.com",
+  email_address: "david@dsmorais.com",
   linkedin_username: "dmorais92",
   linkedIn: "https://www.linkedin.com/in/dmorais92/",
-  instagram_username: "dmorais92",
-  twitter_username: "Psybork",
-  github_username: "dmorais92",
+  twitter_username: "davidsmorais",
+  github_username: "davidsmorais",
   gravatar_url:
     "https://en.gravatar.com/userimage/66563969/9e5abbee5de8b1649bfe778536c3068c.png?size=200",
   youtube_username: null,
